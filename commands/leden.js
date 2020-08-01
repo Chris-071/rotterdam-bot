@@ -5,9 +5,7 @@ module.exports.run = async(client, message, args) => {
     var embed = new discord.MessageEmbed()
     .setTitle("Aantal Leden")
     .setColor("#14e378")
-    .addField("Totaal:",  guild.membercount)
-    .addField("Online", guild.members.online)
-    .addField("Bots", guild.bots);
+    .addField("Totaal:",  message.guild.membercount);
 
     message.channel.send(embed);
 
