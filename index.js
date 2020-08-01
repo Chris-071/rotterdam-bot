@@ -8,7 +8,7 @@ const fs = require("fs");
 client.on("ready", async () => {
     console.log(`Bot is online`);
     client.user.setStatus("dnd");
-    client.user.setActivity("Test", { type: "PLAYING" });
+    client.user.setActivity("Rotterdam | " + message.guild.membercount + "Leden" , { type: "PLAYING" });
 });
 
 
