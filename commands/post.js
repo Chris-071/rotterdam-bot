@@ -14,8 +14,7 @@ module.exports.run = async(client, message, args) => {
                     if (collected.first().content.toLowerCase() == 'suggestie') {
 
 
-                        var kanaal = message.guild.channels.cache.get('739457275520876584')
-                        if(!kanaal) return message.reply("Kanaal **Posts** niet gevonden");
+                        var kanaal = message.guild.channels.cache.get('739234706142527559') 
                         kanaal.send("Test");
  
                        
