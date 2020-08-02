@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
         .setDescription("<:fout:730747907480748082> Je hebt geen permissions om deze ticket te closen.")
         .setColor("#14e378");
 
-    if (!message.member.hasPermissions("MANAGE_MEMBERS")) return message.reply(geenPermsEmbed)
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(geenPermsEmbed)
 
     var geefReden = new discord.MessageEmbed()
         .setDescription("<:fout:730747907480748082> Geef een reden op.")
