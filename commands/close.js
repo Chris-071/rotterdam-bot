@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.delete()
 
         var ticketGeslotenLog = new discord.MessageEmbed()
-            .addField("Ticket:", message.channel)
+            .addField("Ticket:", message.channel.name)
             .addField("Moderator", message.author)
             .addField("Reden:", reden)
             .addField("Gesloten op:", message.createdAt)

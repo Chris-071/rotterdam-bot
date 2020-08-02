@@ -36,12 +36,6 @@ module.exports.run = async (client, message, args) => {
 
     if (bool) return;
 
-    var aanmaak = new discord.MessageEmbed()
-        .setDescription("<:Succesvol:730747906331770900> Je ticket word aangemaakt!")
-        .setColor("#14e378");
-
-    message.reply(aanmaak);
-
 
     message.guild.channels.create("ticket" + "-" + userName.toLowerCase(), { type: 'text' }).then(
         (createdTicket) => {
@@ -73,6 +67,19 @@ module.exports.run = async (client, message, args) => {
                         .setColor("#14e378");
 
                     settedParent.send(inTicketEmbed);
+
+
+                    var aanmaak = new discord.MessageEmbed()
+                    .setDescription("<:Succesvol:730747906331770900> Je ticket word aangemaakt!")
+                    .setColor("#14e378");
+            
+                    var aanmaak2 = new discord.MessageEmbed()
+                    .setDescription(`<:Succesvol:730747906331770900> Je ticket word aangemaakt! ${settedParent.name} `)
+                    .setColor("#14e378");
+            
+                const msg = await message.channel.send(aanmaak);
+                msg.edit()
+            
 
 
                 }
