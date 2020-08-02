@@ -13,26 +13,10 @@ module.exports.run = async(client, message, args) => {
  
                     if (collected.first().content.toLowerCase() == 'suggestie') {
 
-                        const suggestieCol = m => m.author.id === message.author.id;
-                        message.reply("Wat voor suggestie wil je doen?");
-                        message.channel.awaitMessages(suggestieCol, {
-                            max: 1,
-                            time: 100000
-                        }).then(collected => {
-
-                            var suggestieEmbed = new discord.MessageEmbed()
-                            .setTitle(`Nieuwe suggestie van ${message.author}`)
-                            .setColor("#14e378")
-                           .addField("Suggestie:", suggestieCol);
-
-
-                        }).catch(err => {
-                            message.reply("Geen suggestie opgegeven.")
-                        });
 
                         var kanaal = message.guild.channels.cache.get('739457275520876584')
                         if(!kanaal) return message.reply("Kanaal **Posts** niet gevonden");
-                        kanaal.send(suggestieEmbed);
+                        kanaal.send("Test");
  
                        
                     } else if (collected.first().content.toLowerCase() == 'bug') {
@@ -44,8 +28,8 @@ module.exports.run = async(client, message, args) => {
                     }
                     
  
-                }).catch(() => {
-                    message.reply('Geen antwoord na 30 sec, geanuleerd.');
+                }).catch(err => {
+                    message.reply("Error")
                 });
 
 
