@@ -34,23 +34,6 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
-client.on("GuildMemberAdd", async () => {
-
-    //733299156420001834
-    var kanaal = message.guild.channels.cache.get('730747838077861949');
-
-    var embed = new discord.MessageEmbed()
-    .setTitle("Speler gejoind")
-    .addField("Speler:", guild.member)
-    .addField("Aantal leden:", message.guild.memberCount)
-    .setColor("#14e378");
-
-    kanaal.send(embed);
-
-
-
-})
-
 
 
 client.on("message", async message => {
