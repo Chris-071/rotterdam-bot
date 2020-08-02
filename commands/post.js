@@ -30,7 +30,7 @@ module.exports.run = async(client, message, args) => {
                             message.reply("Geen suggestie opgegeven.")
                         });
 
-                        var kanaal = message.guild.channels.cache.find(x => x.name === '#posts')
+                        var kanaal = message.guild.channels.cache.get('739457275520876584')
                         if(!kanaal) return message.reply("Kanaal **Posts** niet gevonden");
                         kanaal.send(suggestieEmbed);
  
