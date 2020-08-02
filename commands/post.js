@@ -5,6 +5,7 @@ module.exports.run = async(client, message, args) => {
         var embed = new discord.MessageEmbed()
         .setDescription("Wat voor post wil je doen? <Suggestie/Bug/Tip/Top>")
         .setColor("#14e378");
+        message.channel.send(embed);
 
     
      message.channel.awaitMessages(m => m.author.id == message.author.id,
