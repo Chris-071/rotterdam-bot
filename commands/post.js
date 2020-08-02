@@ -16,6 +16,7 @@ module.exports.run = async(client, message, args) => {
  
                     if (collected.first().content.toLowerCase() == 'suggestie') {
 
+                        message.channel.send("Wat is je suggestie?")
                         const sugCollector = message.channel.createMessageCollector(filter, {time: 15000});
 
                         var embedSug = new discord.MessageEmbed()
