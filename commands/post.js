@@ -8,7 +8,7 @@ module.exports.run = async(client, message, args) => {
         message.channel.send(embed);
 
         const filter = m => m.content.includes('discord.js');
-        var kanaal = message.guild.channels.cache.get('739234706142527559');
+        var kanaal = message.guild.channels.cache.get('739234706142527559')
 
     
      message.channel.awaitMessages(m => m.author.id == message.author.id,
@@ -23,9 +23,7 @@ module.exports.run = async(client, message, args) => {
                         .addField("Suggestie van:", message.author)
                         .addField("Suggestie:", sugCollector)
 
-                       collector.on('collect', m => {
-                           kanaal.send(embedSug)
-                       })
+                        kanaal.send(embedSug);
  
                        
                     } else if (collected.first().content.toLowerCase() == 'bug') {
