@@ -15,17 +15,6 @@ module.exports.run = async(client, message, args) => {
                 { max: 1, time: 30000 }).then(collected => {
  
                     if (collected.first().content.toLowerCase() == 'suggestie') {
-
-                        message.channel.send("Wat is je suggestie?")
-                        const sugCollector = message.channel.createMessageCollector(filter, {time: 15000});
-
-                        var embedSug = new discord.MessageEmbed()
-                        .setTitle("Nieuwe suggestie!")
-                        .addField("Suggestie van:", message.author)
-                        .addField("Suggestie:", sugCollector)
-
-                        kanaal.send(embedSug);
- 
                        
                     } else if (collected.first().content.toLowerCase() == 'bug') {
                        
