@@ -25,11 +25,14 @@ module.exports.run = async(client, message, args) => {
                            .addField("Suggestie:", suggestieCol);
 
 
-
                         }).catch(err => {
                             message.reply("Geen suggestie opgegeven.")
                         });
 
+                        var kanaal = message.guild.channels.cache.find(x => x.name === '#posts')
+                        if(!kanaal) return message.reply("Kanaal **Posts** niet gevonden");
+                        kanaal.send(suggestieEmbed);
+ 
                        
                     } else if (collected.first().content.toLowerCase() == 'bug') {
                        
