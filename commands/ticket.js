@@ -78,7 +78,7 @@ module.exports.run = async (client, message, args) => {
                     .setColor("#14e378");
             
                 const msg = await message.channel.send(aanmaak);
-                msg.edit()
+                msg.edit(aanmaak2)
             
 
 
