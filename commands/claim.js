@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
     if (!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply(geenPermsEmbed)
 
     var claimEmed = new discord.MessageEmbed()
-        .setDescription(`<:Succesvol:730747906331770900> Ticket overgenomen! ~ Ticket succesvol overgenomen door **${message.author}** `)
+        .setDescription(`<:Succesvol:730747906331770900> Ticket geclaimd! ~ Ticket succesvol geclaimd door **${message.author}** `)
         .setColor("#14e378");
 
     message.channel.send(claimEmed);
