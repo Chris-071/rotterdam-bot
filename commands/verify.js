@@ -61,7 +61,7 @@ exports.run = async (Client, message, args) => {
                                         .setTimestamp()
                                     msg.channel.send(verified);
 
-                                    var lidRole = message.guild.roles.cache.get('737337506613428255'); 
+                                    var lidRole = message.guild.roles.cache.get('737332762016481291'); 
                                     
 
                                     message.member.roles.add(lidRole);
