@@ -10,7 +10,7 @@ module.exports.run = async(client, message, args) => {
     .setDescription(`📊Poll - ${poll}`)
     .setColor("#14e378")
 
-     var kanaal = message.guild.channels.cache.get("733252337556127744");
+     var kanaal = message.guild.channels.cache.get("739234706142527559");
     kanaal.send(embed);
 
 }
