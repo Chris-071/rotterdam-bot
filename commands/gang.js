@@ -6,6 +6,7 @@ module.exports.run = async(client, message, args) => {
     .setDescription("Wil je lid worden van:")
     .addField("The Criminals", "Info: \n Owner: gevuldenkoek")
     .setColor("#14e378");
+    message.channel.send(embed);
 
     var role = message.guild.roles.cache.get('739885903173910568');
 
