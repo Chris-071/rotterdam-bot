@@ -13,8 +13,8 @@ module.exports.run = async(client, message, args) => {
      var kanaal = message.guild.channels.cache.get("739234706142527559");
     kanaal.send(embed).then(
         (embedMessage => {
-            embedMessage.react('✔');
-            embedMessage.react('❌');
+            embedMessage.react('👍');
+            embedMessage.react('👎');
         })
     );
 
