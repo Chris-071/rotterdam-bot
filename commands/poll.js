@@ -13,7 +13,7 @@ module.exports.run = async(client, message, args) => {
      var kanaal = message.guild.channels.cache.get("739234706142527559");
     kanaal.send(embed);
 
-    message.channel.send("Poll gemaakt!" + poll);
+    message.channel.send("Poll gemaakt! " + poll);
 
 }
 
