@@ -29,6 +29,10 @@ module.exports.run = async(client, message, args) => {
     .setDescription(`<:Succesvol:730747906331770900> ${user} succesvol geband voor **${reden}**`);
 
     message.channel.send(embed2);
+
+    user.ban(reden).catch(err => {
+        if(err) console.log(err);
+    });
    
     
 
