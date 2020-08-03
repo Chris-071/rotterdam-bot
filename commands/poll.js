@@ -11,10 +11,11 @@ module.exports.run = async(client, message, args) => {
     .setColor("#14e378");
     var pP = message.guild.roles.cache.get('739869963913003198');
      var kanaal = message.guild.channels.cache.get("739234706142527559");
-    kanaal.send(pP + poll).then(
+    kanaal.send(embed).then(
         (embedMessage => {
             embedMessage.react('👍');
             embedMessage.react('👎');
+            message.channel.send(pP);
         })
     );
 
