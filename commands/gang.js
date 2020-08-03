@@ -3,8 +3,8 @@ const discord = require("discord.js");
 module.exports.run = async(client, message, args) => {
 
     var embed = new discord.MessageEmbed()
-    .setDescription("Wil je lid worden van:")
-    .addField("The Criminals", "Info: \n Owner: gevuldenkoek")
+    .setDescription("Wil je lid worden van: <ja/nee>")
+    .addField("The Criminals", "Owner: gevuldenkoek")
     .setColor("#14e378");
     message.channel.send(embed);
 
