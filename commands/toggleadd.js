@@ -115,7 +115,7 @@ module.exports.run = async (client, message, args) => {
                             message.member.roles.remove(pP);
                             message.member.roles.remove(gP);
                             var embeda = new discord.MessageEmbed()
-                                .setDescription(`<:Succesvol:730747906331770900> alle rollen toegevoegd!`)
+                                .setDescription(`<:Succesvol:730747906331770900> alle rollen verwijderd!`)
                                 .setColor("#14e378");
                             message.channel.send(embeda);
                         }
