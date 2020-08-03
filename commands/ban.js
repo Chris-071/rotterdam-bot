@@ -4,10 +4,10 @@ module.exports.run = async(client, message, args) => {
 
     if(!message.member.hasPermission("BAN_MEMBERS")) return("Alleen staff-leden kunnen dit.");
 
-    if(!args[1]) return message.reply("Geef een Gebruiker op.");
-    if(!args[2]) return message.reply("Geef een Reden op.");
+    if(!args[0]) return message.reply("Geef een Gebruiker op.");
+    if(!args[1]) return message.reply("Geef een Reden op.");
 
-    var user = message.mentions.users.first() || message.guild.members.get(args[1]);    
+    var user = message.mentions.users.first() || message.guild.members.get(args[0]);    
     if(!user) return message.reply("Geef een Gebruiker op.");
 
     var reden = args.slice(2).join(" ");
