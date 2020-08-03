@@ -12,10 +12,10 @@ var embed = new discord.MessageEmbed()
     .setDescription(`<:Succesvol:730747906331770900> activiteit veranderd! Nieuwe activiteit: ${ac}`)
     .setColor("#14e378");
 
-message.channel.send(embed);
 
     if(message.author.id === cId){
         client.user.setActivity(ac , { type: "WATCHING" });
+        message.channel.send(embed);
     } else {
 
         var geenPermsEmbed = new discord.MessageEmbed()
