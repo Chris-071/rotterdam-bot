@@ -49,7 +49,7 @@ module.exports.run = async (client, message, args) => {
                     .setDescription(`<:Succesvol:730747906331770900> alle rollen toegevoegd!`)
                     .setColor("#14e378");
                 message.channel.send(embeda);
-
+            }
 
         }).catch(err => {
             message.reply("Error")
