@@ -9,7 +9,8 @@ exports.run = async (Client, message, args) => {
 
 
     function makeid() {
-        var text = "Lol Crazy Apple Banaan Oof Verify Copy Nice";
+        // var text = "Lol Crazy Apple Banaan Oof Verify Copy Nice";
+        var text = "Welcome to the Roblox profile! This is where you can check out the newest items in the catalog, and get a jumpstart on exploring and building on our Imagination Platform. If you want news on updates to the Roblox platform, or great new experiences to play with friends, check out blog.roblox.com. Please note, this is an automated account. If you need to reach Roblox for any customer service needs find help at www.roblox.com/help"
         return text;
     }
 
@@ -21,7 +22,7 @@ exports.run = async (Client, message, args) => {
         .setDescription("Wat is jou ROBLOX username?")
         .setFooter("De promt word beëindigd over 200 seconden.")
         .setTimestamp()
-    msg.channel.send(robloxEmbed) 
+    msg.channel.send(robloxEmbed);
 
     collector.on("collect", m => {
         if (m.content === 'cancel' || m.content === 'Cancel') {
