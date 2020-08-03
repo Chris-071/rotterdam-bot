@@ -3,7 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
     var embed = new discord.MessageEmbed()
-        .setDescription(`<:Succesvol:730747906331770900> Welke rol wil je? <giveaway/poll/mededeling>`)
+        .setDescription(`<:Succesvol:730747906331770900> Welke rol wil je? <giveaway/poll/mededeling/all>`)
         .setColor("#14e378");
 
     message.reply(embed);
@@ -40,7 +40,15 @@ module.exports.run = async (client, message, args) => {
                     .setColor("#14e378");
                 message.channel.send(embedm);
 
-            }
+            }else if (collected.first().content.toLowerCase() == 'all') {
+
+                message.member.roles.add(mP);
+                message.member.roles.add(pP);
+                message.member.roles.add(gP);
+                var embeda = new discord.MessageEmbed()
+                    .setDescription(`<:Succesvol:730747906331770900> alle rollen toegevoegd!`)
+                    .setColor("#14e378");
+                message.channel.send(embeda);
 
 
         }).catch(err => {
