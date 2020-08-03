@@ -11,9 +11,20 @@ module.exports.run = async(client, message, args) => {
     .setColor("#14e378");
 
      var kanaal = message.guild.channels.cache.get("739234706142527559");
-    kanaal.send(embed);
+    kanaal.send(embed).then(
+        (embedMessage => {
+            embedMessage.react('✔');
+            embedMessage.react('❌');
+        })
+    );
 
-    message.channel.send("Poll gemaakt! " + poll);
+    var embedLog = new discord.MessageEmbed()
+    .setDescription(`<:Succesvol:730747906331770900> Poll aangemaakt! Poll: ** ${poll} **`)
+    .setColor("#14e378");
+
+    message.channel.send(embedLog);
+
+  
 
 }
 
