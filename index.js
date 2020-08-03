@@ -8,7 +8,7 @@ const fs = require("fs");
 client.on("ready", async () => {
     console.log(`Bot is online`);
     client.user.setStatus("dnd");
-    client.user.setActivity("Rotterdam, The Netherlands" , { type: "WATCHING" });
+    client.user.setActivity("TEST" , { type: "WATCHING" });
 });
 
 
