@@ -40,7 +40,7 @@ exports.run = async (Client, message, args) => {
             msg.channel.send(foundUsername) 
             const collector2 = message.channel.createMessageCollector(filter, { max: '1', maxMatches: "1", time: "200000" }) 
             collector2.on('collect', async mag => {
-                if (mag.content.includes.toLowerCase()('done') & mag.content.includes.toLowerCase()("done") && mag.author.id == message.author.id) {
+                if (mag.content.toLowerCase()('done') & mag.content.toLowerCase()("done") && mag.author.id == message.author.id) {
                     const fetchingBlurb = new Discord.MessageEmbed()
                         .setColor("BLUE")
                         .setTitle("Verificatie")
