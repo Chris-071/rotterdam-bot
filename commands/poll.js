@@ -15,7 +15,7 @@ module.exports.run = async(client, message, args) => {
         (embedMessage => {
             embedMessage.react('👍');
             embedMessage.react('👎');
-            message.channel.send(`${pP}`);
+           kanaal.send(`${pP}`);
         })
     );
 
