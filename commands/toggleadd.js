@@ -3,7 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
     var embed = new discord.MessageEmbed()
-        .setDescription(`<:Succesvol:730747906331770900> Welke rol wil je? <giveaway/poll/mededeling/all>`)
+        .setDescription(`<:Succesvol:730747906331770900> Wil je roles verwijder of toevoegen? <add/remove>`)
         .setColor("#14e378");
 
     message.reply(embed);
@@ -13,42 +13,157 @@ module.exports.run = async (client, message, args) => {
     var pP = message.guild.roles.cache.get('739869963913003198');
     var mP = message.guild.roles.cache.get('739869966232322058');
 
+    // message.channel.awaitMessages(m => m.author.id == message.author.id,
+    //     { max: 1, time: 30000 }).then(collected => {
+
+    //         if (collected.first().content.toLowerCase() == 'giveaway') {
+
+    //             message.member.roles.add(gP);
+    //             var embedg = new discord.MessageEmbed()
+    //                 .setDescription(`<:Succesvol:730747906331770900> De role 'Giveaway Ping' succesvol toegevoegd`)
+    //                 .setColor("#14e378");
+    //             message.channel.send(embedg);
+
+    //         } else if (collected.first().content.toLowerCase() == 'poll') {
+
+    //             message.member.roles.add(pP);
+    //             var embedP = new discord.MessageEmbed()
+    //                 .setDescription(`<:Succesvol:730747906331770900> De role 'Poll Ping' succesvol toegevoegd`)
+    //                 .setColor("#14e378");
+    //             message.channel.send(embedP);
+
+    //         } else if (collected.first().content.toLowerCase() == 'mededeling') {
+
+    //             message.member.roles.add(mP);
+    //             var embedm = new discord.MessageEmbed()
+    //                 .setDescription(`<:Succesvol:730747906331770900> De role 'Mededeling Ping' succesvol toegevoegd`)
+    //                 .setColor("#14e378");
+    //             message.channel.send(embedm);
+
+    //         } else if (collected.first().content.toLowerCase() == 'all') {
+
+    //             message.member.roles.add(mP);
+    //             message.member.roles.add(pP);
+    //             message.member.roles.add(gP);
+    //             var embeda = new discord.MessageEmbed()
+    //                 .setDescription(`<:Succesvol:730747906331770900> alle rollen toegevoegd!`)
+    //                 .setColor("#14e378");
+    //             message.channel.send(embeda);
+    //         }
+
+    //     }).catch(err => {
+    //         message.reply("Error")
+    //     });
+
     message.channel.awaitMessages(m => m.author.id == message.author.id,
         { max: 1, time: 30000 }).then(collected => {
 
-            if (collected.first().content.toLowerCase() == 'giveaway') {
+            if (collected.first().content.toLowerCase() == 'add') {
 
-                message.member.roles.add(gP);
-                var embedg = new discord.MessageEmbed()
-                    .setDescription(`<:Succesvol:730747906331770900> De role 'Giveaway Ping' succesvol toegevoegd`)
+                var add = new discord.MessageEmbed()
+                    .setDescription(`<:Succesvol:730747906331770900> Welke rol wil je toevoegen? <giveaway/poll/mededeling/all>`)
                     .setColor("#14e378");
-                message.channel.send(embedg);
 
-            } else if (collected.first().content.toLowerCase() == 'poll') {
+                    message.reply(add);
 
-                message.member.roles.add(pP);
-                var embedP = new discord.MessageEmbed()
-                    .setDescription(`<:Succesvol:730747906331770900> De role 'Poll Ping' succesvol toegevoegd`)
+                message.channel.awaitMessages(m => m.author.id == message.author.id,
+                    { max: 1, time: 30000 }).then(collected => {
+
+                        if (collected.first().content.toLowerCase() == 'giveaway') {
+
+                            message.member.roles.add(gP);
+                            var embedg = new discord.MessageEmbed()
+                                .setDescription(`<:Succesvol:730747906331770900> De role 'Giveaway Ping' succesvol toegevoegd`)
+                                .setColor("#14e378");
+                            message.channel.send(embedg);
+
+                        } else if (collected.first().content.toLowerCase() == 'poll') {
+
+                            message.member.roles.add(pP);
+                            var embedP = new discord.MessageEmbed()
+                                .setDescription(`<:Succesvol:730747906331770900> De role 'Poll Ping' succesvol toegevoegd`)
+                                .setColor("#14e378");
+                            message.channel.send(embedP);
+
+                        } else if (collected.first().content.toLowerCase() == 'mededeling') {
+
+                            message.member.roles.add(mP);
+                            var embedm = new discord.MessageEmbed()
+                                .setDescription(`<:Succesvol:730747906331770900> De role 'Mededeling Ping' succesvol toegevoegd`)
+                                .setColor("#14e378");
+                            message.channel.send(embedm);
+
+                        } else if (collected.first().content.toLowerCase() == 'all') {
+
+                            message.member.roles.add(mP);
+                            message.member.roles.add(pP);
+                            message.member.roles.add(gP);
+                            var embeda = new discord.MessageEmbed()
+                                .setDescription(`<:Succesvol:730747906331770900> alle rollen toegevoegd!`)
+                                .setColor("#14e378");
+                            message.channel.send(embeda);
+                        }
+
+                    }).catch(err => {
+                        message.reply("Error")
+                    });
+
+                
+
+
+
+
+            } else if (collected.first().content.toLowerCase() == 'remove') {
+
+
+                var remove = new discord.MessageEmbed()
+                    .setDescription(`<:Succesvol:730747906331770900> Welke rol wil je verwijderen? <giveaway/poll/mededeling/all>`)
                     .setColor("#14e378");
-                message.channel.send(embedP);
 
-            } else if (collected.first().content.toLowerCase() == 'mededeling') {
+                    message.reply(remove);
 
-                message.member.roles.add(mP);
-                var embedm = new discord.MessageEmbed()
-                    .setDescription(`<:Succesvol:730747906331770900> De role 'Mededeling Ping' succesvol toegevoegd`)
-                    .setColor("#14e378");
-                message.channel.send(embedm);
+                message.channel.awaitMessages(m => m.author.id == message.author.id,
+                    { max: 1, time: 30000 }).then(collected => {
 
-            }else if (collected.first().content.toLowerCase() == 'all') {
+                        if (collected.first().content.toLowerCase() == 'giveaway') {
 
-                message.member.roles.add(mP);
-                message.member.roles.add(pP);
-                message.member.roles.add(gP);
-                var embeda = new discord.MessageEmbed()
-                    .setDescription(`<:Succesvol:730747906331770900> alle rollen toegevoegd!`)
-                    .setColor("#14e378");
-                message.channel.send(embeda);
+                            message.member.roles.remove(gP);
+                            var embedg = new discord.MessageEmbed()
+                                .setDescription(`<:Succesvol:730747906331770900> De role 'Giveaway Ping' succesvol toegevoegd`)
+                                .setColor("#14e378");
+                            message.channel.send(embedg);
+
+                        } else if (collected.first().content.toLowerCase() == 'poll') {
+
+                            message.member.roles.remove(pP);
+                            var embedP = new discord.MessageEmbed()
+                                .setDescription(`<:Succesvol:730747906331770900> De role 'Poll Ping' succesvol toegevoegd`)
+                                .setColor("#14e378");
+                            message.channel.send(embedP);
+
+                        } else if (collected.first().content.toLowerCase() == 'mededeling') {
+
+                            message.member.roles.remove(mP);
+                            var embedm = new discord.MessageEmbed()
+                                .setDescription(`<:Succesvol:730747906331770900> De role 'Mededeling Ping' succesvol toegevoegd`)
+                                .setColor("#14e378");
+                            message.channel.send(embedm);
+
+                        } else if (collected.first().content.toLowerCase() == 'all') {
+
+                            message.member.roles.remove(mP);
+                            message.member.roles.remove(pP);
+                            message.member.roles.remove(gP);
+                            var embeda = new discord.MessageEmbed()
+                                .setDescription(`<:Succesvol:730747906331770900> alle rollen toegevoegd!`)
+                                .setColor("#14e378");
+                            message.channel.send(embeda);
+                        }
+
+                    }).catch(err => {
+                        message.reply("Error")
+                    });
+
             }
 
         }).catch(err => {
