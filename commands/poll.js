@@ -9,9 +9,9 @@ module.exports.run = async(client, message, args) => {
     var embed = new discord.MessageEmbed()
     .setDescription(`📊Poll - ${poll}`)
     .setColor("#14e378");
-
+    var pP = message.guild.roles.cache.get('739869963913003198');
      var kanaal = message.guild.channels.cache.get("739234706142527559");
-    kanaal.send(embed).then(
+    kanaal.send(pP + poll).then(
         (embedMessage => {
             embedMessage.react('👍');
             embedMessage.react('👎');
