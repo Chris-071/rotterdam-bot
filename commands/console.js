@@ -4,12 +4,11 @@ module.exports.run = async(client, message, args) => {
 
 var cId = '421717020288221186'
 
-Var outText = “Object.find = xyz *1 crash=y save=x disable=z]
     var in = args.slice(0).join(" ")
 
 
 var embed = new discord.MessageEmbed()
-    .setDescription(`<:Succesvol:730747906331770900> Console: \n Input: {in} \n Output: {outText}`)
+    .setDescription(`<:Succesvol:730747906331770900> Console: \n Input: ${in} \n Output: [Object.find = xyz *1 crash=y save=x disable=z] `)
     .setColor("#14e378");
 
 
