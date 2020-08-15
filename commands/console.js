@@ -4,10 +4,7 @@ module.exports.run = async(client, message, args) => {
 
 var cId = '421717020288221186'
 
-Var out = [“Object.Cache.get = >* amount, For i&*”, “Object.find.get(‘xyz * 1000’)”]
-
-Var outText = Math.floor(Math.random(out));
-
+Var outText = “Object.find = xyz *1 crash=y save=x disable=z]
     var in = args.slice(0).join(" ")
 
 
@@ -17,7 +14,7 @@ var embed = new discord.MessageEmbed()
 
 
     if(message.author.id === cId){
-        client.user.setActivity(ac , { type: "WATCHING" });
+   
         message.channel.send(embed);
     } else {
 
