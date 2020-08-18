@@ -3,7 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async(client, message, args) => {
 
     var prefix = "!"
-    var spelerCmds = "help, ticket, idee, bug"
+    var spelerCmds = "help, ticket, idee, bug, toggle, gang"
     var modCmds = "warn, kick, ban, mute, claim, close"
     var ownerCmds = "soon"
     var botOwnerCmds = "setName, setAc"
