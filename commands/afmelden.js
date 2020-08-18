@@ -65,7 +65,12 @@ var reden = collected.first().content
     .addField("Gebruiker:", message.author)
     .addField("Vanaf", vanaf)
     .addField("Tot", tot)
-    .addField("Reden", reden)
+    .addField("Reden", reden);
+
+
+    message.channel.send(embed);
+    
+
 
 
 }
