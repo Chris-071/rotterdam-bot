@@ -96,7 +96,7 @@ module.exports.run = async (client, message, args) => {
 
         for (let y = 0; y < winners.length; y++) {
             
-            message.channel.send("Gefeliciteerd " + winners[i].username + `met de **${prijs}**!`)
+            message.channel.send("Gefeliciteerd " + winners[y].username + `met de **${prijs}**!`)
             
         }
 
