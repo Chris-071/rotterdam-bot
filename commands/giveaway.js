@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
     message.delete()
 
     var date = new Date().getTime();
-    var dateEnd = new Date(date + (time * 1000))
+    var dateEnd = new Date(date + (tijd * 1000))
 
     var giveawayEmbed = new discord.MessageEmbed()
         .setTitle("🎉 **Giveaway!** 🎉")
