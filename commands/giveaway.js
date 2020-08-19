@@ -34,9 +34,9 @@ module.exports.run = async (client, message, args) => {
         .setDescription(`Reageer met '🎉' om mee te doen aan de giveaway.`)
         .setColor("#14e378") 
         .addField("Prijs:", prijs)
-        .addField("Tijd:", dateEnd)
         .addField("Aantal Winnaars", winnaars)
-        .setFooter(`Hosted By ${message.author} • Vervalt ${dateEnd}`);
+        .addField("Hosted By", message.author)
+        .setFooter(`Vervalt: ${dateEnd}`);
 
     var embedSend = await message.channel.send(giveawayEmbed);
     embedSend.react("🎉");
@@ -51,7 +51,7 @@ module.exports.run = async (client, message, args) => {
 
         for (let i = 0; i < peopleReacted.length; i++) {
 
-            if (peopleReacted[i].id == client.users.id) {
+            if (peopleReacted[i].id == client.user.id) {
                 peopleReacted.splice(i, 1)
                 continue;
             }
@@ -96,7 +96,7 @@ module.exports.run = async (client, message, args) => {
 
         for (let y = 0; y < winners.length; y++) {
             
-            message.channel.send("Gefeliciteerd " + winners[y].username + `met de **${prijs}**!`)
+            message.channel.send("Gefeliciteerd " + winners[y].username + ` met de **${prijs}**!`)
             
         }
 
