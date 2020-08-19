@@ -12,7 +12,7 @@ module.exports.run = async(client, message, args) => {
     .setFooter("©️Rotterdam, The Netherlands");
 
 
-    message.channel.send(embed);
+    // message.channel.send(embed);
 
 
 
