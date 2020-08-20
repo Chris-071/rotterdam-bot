@@ -68,9 +68,7 @@ client.on("message", async message => {
         levelFile[idUser] = {
 
             xp: 0,
-            level: 0,
-            naam: message.author,
-            id: idUser
+            level: 0
 
         }
 
