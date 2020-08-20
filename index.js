@@ -94,6 +94,8 @@ client.on("message", async message => {
 
     }
 
+    console.log(randomXp);
+
     var embedLevel = new discord.MessageEmbed()
     .setTitle("**Rank-Up!**")
     .setColor("#14e378")
