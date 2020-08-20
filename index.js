@@ -4,11 +4,12 @@ const client = new discord.Client();
 client.commands = new discord.Collection();
 client.login(process.env.token)
 const fs = require("fs");
+const levelFile = require("./data/levels.json");
 
 client.on("ready", async () => {
     console.log(`Bot is online`);
     client.user.setStatus("dnd");
-    client.user.setActivity("RESTARTING..." , { type: "WATCHING" });
+    client.user.setActivity("Rotterdam The Netherlands", { type: "WATCHING" });
 });
 
 
@@ -57,6 +58,52 @@ client.on("message", async message => {
     if (commands) commands.run(client, message, arguments);
 
     var msg = message.content.toLowerCase();
+
+    var randomXp = Math.floor(Math.random(1) * 15) + 1;
+
+    var idUser = message.author.id
+
+    if (!levelFile[idUser]) {
+
+        levelFile[idUser] = {
+
+            xp: 0,
+            level: 0,
+            naam: message.author,
+            id: idUser
+
+        }
+
+    }
+
+    levelFile[idUser].xp += randomXp;
+
+    var levelUser = levelFile[idUser].level;
+    var xpUser = levelFile[idUser].xp;
+    var nextLevelXp = levelUser * 300
+
+    if (nextLevelXp === 0) nextLevelXp = 100;
+
+    if (xpUser >= nextLevelXp) {
+
+        levelFile[idUser].level += 1;
+
+        fs.writeFile("./data/levels.json", JSON.stringify(levelFile), err => {
+            if (err) console.log(err);
+        });
+
+    }
+
+    var embedLevel = new discord.MessageEmbed()
+    .setTitle("**Rank-Up!**")
+    .setColor("#14e378")
+    .addField("Level: ", levelFile[idUser].level)
+    .addField("Aantal XP: ", xpUser)
+    .addField("Volgende Rank-Up: ", nextLevelXp + "XP");
+
+    message.channel.send(embedLevel);
+
+
 
 
 
