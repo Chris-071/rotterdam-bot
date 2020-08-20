@@ -59,7 +59,7 @@ client.on("message", async message => {
 
     var msg = message.content.toLowerCase();
 
-    var randomXp = Math.floor(Math.random(1) * 15) + 1;
+    var randomXp = Math.floor(Math.random(1) * 100) + 1;
 
     var idUser = message.author.id
 
