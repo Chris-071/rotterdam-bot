@@ -59,7 +59,7 @@ client.on("message", async message => {
 
     var msg = message.content.toLowerCase();
 
-    var randomXp = Math.floor(Math.random(1) * 100) + 1;
+    var randomXp = Math.floor(Math.random(1) * 1000) + 1;
 
     var idUser = message.author.id
 
@@ -100,8 +100,7 @@ client.on("message", async message => {
     .setTitle("**Rank-Up!**")
     .setColor("#14e378")
     .addField("Level: ", levelFile[idUser].level)
-    .addField("Aantal XP: ", xpUser)
-    .addField("Volgende Rank-Up: ", nextLevelXp + "XP");
+    .addField("Aantal XP: ", xpUser);
 
     message.channel.send(embedLevel);
 
