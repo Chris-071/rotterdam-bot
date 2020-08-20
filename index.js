@@ -100,7 +100,7 @@ client.on("message", async message => {
     .setTitle("**Rank-Up!**")
     .setColor("#14e378")
     .addField("Level: ", levelFile[idUser].level)
-    .addField("Aantal XP: ", xpUser);
+    .addField("Aantal XP: ", levelFile[idUser].xp);
 
     message.channel.send(embedLevel);
 
