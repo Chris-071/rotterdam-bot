@@ -48,16 +48,21 @@ module.exports.run = async (client, message, args) => {
                 message.channel.bulkDelete(5).then(
                     message.channel.send(uitkomst).then(async msg => {
 
-                        var emoji = await promptMessage(msg, message.author, 60, ["✔", "❌"]);
-
-                        if (emoji === "✔"){
-                            channel.send(eventEmbed);
-
-                            
+                        var emoji = await promptMessage(msg, message.author, 30, ["✔", "❌"]);
+                
+                        if (emoji === "✔") {
+                
+                            message.channel.send(eventEmbed);
+                
                         } else if (emoji === "❌") {
-                            message.channel.send("Event gecanceld.");
+                
+                            message.channel.send("Event gecanceld");
+                
                         }
+                
                     })
+                
+
                 )
                
             })
@@ -65,6 +70,22 @@ module.exports.run = async (client, message, args) => {
     }).catch(err => {
         message.channel.send("Error.");
     })
+
+
+    async function promptMessage(message, author, time, reactions) {
+                
+        time *= 1000;
+
+
+        for (const reaction of reactions) {
+            await message.react(reaction);
+        }
+
+        const filter = (reaction, user) => reactions.includes(reaction.emoji.name) && user.id === author.id;
+
+
+        return message.awaitReactions(filter, { max: 1, time: time }).then(collected => collected.first() && collected.first().emoji.name);
+    }
 
 }
 
