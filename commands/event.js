@@ -28,52 +28,51 @@ module.exports.run = async (client, message, args) => {
         message.channel.awaitMessages(s => s.author.id == message.author.id, { max: 1 }).then(antwoord => {
             var antwoord2 = antwoord.first();
             message.channel.send(cohost);
-            
+
             message.channel.awaitMessages(s => s.author.id == message.author.id, { max: 1 }).then(antwoord => {
                 var antwoord3 = antwoord.first();
 
                 var uitkomst = new discord.MessageEmbed()
-                .setTitle("Event is aangemaakt!")
-                .setColor("BLUE")
-                .setDescription(`Tijd: ${antwoord1},\nEvent: ${antwoord2}, \nCo-Host: ${antwoord3}. \n\n Is dit oke? Reageer hieronder.`);
+                    .setTitle("Event is aangemaakt!")
+                    .setColor("BLUE")
+                    .setDescription(`Tijd: ${antwoord1},\nEvent: ${antwoord2}, \nCo-Host: ${antwoord3}. \n\n Is dit oke? Reageer hieronder.`);
 
                 var eventEmbed = new discord.MessageEmbed()
-                .setTitle("Event")
-                .addField("Event:", antwoord2)
-                .addField("Tijd:", antwoord1)
-                .addField("Host:", message.author)
-                .addField("Co-Host:", antwoord3)
-                .setColor("BLUE");
+                    .setTitle("Event")
+                    .addField("Event:", antwoord2)
+                    .addField("Tijd:", antwoord1)
+                    .addField("Host:", message.author)
+                    .addField("Co-Host:", antwoord3)
+                    .setColor("BLUE");
 
-                message.channel.bulkDelete(5).then(
-                    message.channel.send(uitkomst).then(async msg => {
+                message.channel.send(uitkomst).then(async msg => {
 
-                        var emoji = await promptMessage(msg, message.author, 30, ["✔", "❌"]);
-                
-                        if (emoji === "✔") {
-                
-                            message.channel.send(eventEmbed);
-                
-                        } else if (emoji === "❌") {
-                
-                            message.channel.send("Event gecanceld");
-                
-                        }
-                
-                    })
-                
+                    var emoji = await promptMessage(msg, message.author, 30, ["✔", "❌"]);
 
-                )
-               
+                    if (emoji === "✔") {
+
+                        channel.send(eventEmbed);
+
+                    } else if (emoji === "❌") {
+
+                        message.channel.send("Event gecanceld");
+
+                    }
+
+                })
+
+
+
+
             })
+        }).catch(err => {
+            message.channel.send("Error.");
         })
-    }).catch(err => {
-        message.channel.send("Error.");
     })
 
 
     async function promptMessage(message, author, time, reactions) {
-                
+
         time *= 1000;
 
 
