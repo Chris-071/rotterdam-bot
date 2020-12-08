@@ -37,6 +37,11 @@ module.exports.run = async (client, message, args) => {
                     .setColor("BLUE")
                     .setDescription(`Tijd: ${antwoord1},\nEvent: ${antwoord2}, \nCo-Host: ${antwoord3}. \n\n Is dit oke? Reageer hieronder.`);
 
+                    
+                var gemaakt = new discord.MessageEmbed()
+                .setTitle("Event is aangemaakt!")
+                .setColor("BLUE");
+
                 var eventEmbed = new discord.MessageEmbed()
                     .setTitle("Event")
                     .addField("Event:", antwoord2)
@@ -52,6 +57,7 @@ module.exports.run = async (client, message, args) => {
                     if (emoji === "✔") {
 
                         channel.send(eventEmbed);
+                        msg.edit(gemaakt);
 
                     } else if (emoji === "❌") {
 
