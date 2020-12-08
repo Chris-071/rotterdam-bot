@@ -1,23 +1,19 @@
-const discord = require("discord.js");
-
 module.exports.run = async(client, message, args) => {
 
-    var prefix = "!"
-    var spelerCmds = "help, ticket, idee, bug, toggle, gang"
-    var modCmds = "warn, kick, ban, mute, claim, close"
-    var ownerCmds = "soon"
-    var botOwnerCmds = "setName, setAc"
+
+    var commandsSpeler = "!help, !whois, !suggestie, !bug, !new"
+    var commandsStaff = "!ban, !kick, !warn, !training, !event, !claim, !unclaim, !close"
+    var commandsOwner = "!vergadering"
 
     var embed = new discord.MessageEmbed()
     .setTitle("Commands")
-    .setDescription(`Prefix: ${prefix}`)
-    .addField("Algemene Commands", spelerCmds)
-    .addField("Moderator Commands", modCmds)
-    .addField("Owner Commands", ownerCmds)
-    .addField("Bot Owner Commands", botOwnerCmds)
-    .setColor("#14e378");
+    .addField("Algemene Commands: ", commandsSpeler)
+    .addField("Staff Commands: ", commandsStaff)
+    .addField("Owner Commands: ", commandsOwner)
+    .setColor("BLUE");
 
     message.channel.send(embed);
+
 
 }
 
