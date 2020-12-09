@@ -34,8 +34,6 @@ module.exports.run = async(client, message, args) => {
             .addField("Nickname:", nickname)
             .addField("status:", `${status}`)
             .addField("Activiteit:", `${gebruiker.presence.activities[0] ? gebruiker.presence.activities[0].name : "Deze gebruiker speelt op dit moment niks."}`)
-            .addField("Account gemaakt:", `${moment(gebruiker.user.createdAt).format("LLL")} (${moment(gebruiker.user.createdTimestamp).fromNow()})`)
-            .addField("Server Gejoind:", `${moment(gebruiker.joinedAt).format("LLL")}`)
             .addField("Badge:", badge)
             .addField(`Roles {${roles}}`, roleNames);
     
