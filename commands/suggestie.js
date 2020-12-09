@@ -39,7 +39,7 @@ module.exports.run = async (client, message, args) => {
                     embedMessage.react("✔");
                     embedMessage.react("❌");
                 })
-                msg.edit(gemaakt).then(reactions.Remove())
+                msg.edit(gemaakt);
 
             } else if (emoji === "❌") {
 
