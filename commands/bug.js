@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
 
     message.channel.send(bug);
 
-    message.channel.awairMessages(s => s.author.id == message.author.id, { max: 1 }).then(antwoord => {
+    message.channel.awaitMessages(s => s.author.id == message.author.id, { max: 1 }).then(antwoord => {
         var antwoord1 = antwoord.first();
 
         var uitkomst = new discord.MessageEmbed()
