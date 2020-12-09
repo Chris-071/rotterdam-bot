@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
         .setColor("BLUE");
 
 
-    var channel = message.guild.channels.cache.get('786166699489493043');
+    var channel = message.guild.channels.cache.get('786166787850764288');
 
     message.channel.send(Suggestie);
 
@@ -39,7 +39,7 @@ module.exports.run = async (client, message, args) => {
                     embedMessage.react("✔");
                     embedMessage.react("❌");
                 })
-                msg.edit(gemaakt);
+                msg.edit(gemaakt).then(reactions.Remove())
 
             } else if (emoji === "❌") {
 
