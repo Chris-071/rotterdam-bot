@@ -35,7 +35,10 @@ module.exports.run = async (client, message, args) => {
 
             if (emoji === "✔") {
 
-                channel.send(embed);
+                channel.send(embed).then(embedMessage => {
+                    embedMessage.react("✔");
+                    embedMessage.react("❌");
+                })
                 msg.edit(gemaakt);
 
             } else if (emoji === "❌") {
