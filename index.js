@@ -9,7 +9,7 @@ const levelFile = require("./data/levels.json");
 client.on("ready", async () => {
     console.log(`Bot is online`);
     client.user.setStatus("dnd");
-    client.user.setActivity("Rotterdam The Netherlands", { type: "WATCHING" });
+    client.user.setActivity("SOON ~ RTD [Rotterdam]", { type: "WATCHING" });
 });
 
 
