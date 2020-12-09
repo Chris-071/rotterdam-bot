@@ -3,7 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async(client, message, args) => {
 
 
-    var commandsSpeler = "!help, !whois, !suggestie, !bug, !new"
+    var commandsSpeler = "!help, !suggestie, !bug, !new"
     var commandsStaff = "!ban, !kick, !warn, !training, !event, !claim, !unclaim, !close"
     var commandsOwner = "!vergadering"
 
