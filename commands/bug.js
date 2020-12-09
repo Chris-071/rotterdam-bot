@@ -3,21 +3,15 @@ const discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
     var bug = new discord.MessageEmbed()
-        .setDescription(`Hallo ${message.author}, Vertel hier wat jou 'Bug' is.`)
-        .setColor("BLUE");
-
-
-    var info = new discord.MessageEmbed()
-        .setDescription(`Hallo ${message.author}, Bekijk jou DM om verder te gaan.`)
+        .setDescription(`Hallo ${message.author}, Vertel wat jou 'Bug' is.`)
         .setColor("BLUE");
 
 
     var channel = message.guild.channels.cache.get('786166699489493043');
 
-    message.channel.send(info);
-    message.author.send(bug);
+    message.channel.send(bug);
 
-    message.author.awaitMessages(s => s.author.id == message.author.id, { max: 1 }).then(antwoord => {
+    message.channel.awairMessages(s => s.author.id == message.author.id, { max: 1 }).then(antwoord => {
         var antwoord1 = antwoord.first();
 
         var uitkomst = new discord.MessageEmbed()
