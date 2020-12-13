@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
 
     message.guild.channels.cache.forEach(channel => {
 
-        if (channel.name == "Ticket" + "-" + nickname.toLowerCase()) {
+        if (channel.name == nickname.toLowerCase() + "-" + "ticket") {
 
             bool = true;
 
@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args) => {
 
     if (bool) return;
 
-    message.guild.channels.create("Ticket" + "-" + nickname, { type: 'text' }).then(
+    message.guild.channels.create(nickname.toLowerCase() + "-" + "ticket", { type: 'text' }).then(
         (createdChannel) => {
             createdChannel.setParent(catId).then(
                 (settedParent) => {
