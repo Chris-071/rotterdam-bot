@@ -35,6 +35,21 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
+client.on("guildMemberAdd", member => {
+
+    var channel = member.guild.channels.cache.find(channel => channel.name === 'algemeen');
+    if (!channel) return;
+
+    var joinEmbed = new discord.MessageEmbed()
+        .setDescription(`Welkom in ${member.guild.name}, ${member}.`)
+        .setFooter(`${message.guild.memberCount} Leden.`)
+        .setColor("#14e378");
+
+    channel.send(joinEmbed);
+
+
+});
+
 
 
 client.on("message", async message => {
