@@ -55,7 +55,7 @@ module.exports.run = async (client, message, args) => {
                         VIEW_CHANNEL: false
                     });
 
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@Support Team'), {
+                    settedParent.updateOverwrite(message.guild.roles.cache.get("785596843391582269"), {
                         SEND_MESSAGES: true,
                         VIEW_CHANNEL: true
                     });
@@ -73,6 +73,8 @@ module.exports.run = async (client, message, args) => {
                         .setColor("BLUE")
                         .setDescription(`Hallo ${message.author.username}, Je word zo snel mogelijk geholpen door het Support Team.`)
                         .addField("Reden van ticket: ", reden || "Niet opgegeven.");
+
+                        settedParent.send(`<@785596843391582269> <@${message.author.id}>`).then(settedParent.send(embedTicket));
                 }
             ).catch(err => {
                 print("Er is een error bij het ticket systeem.")
