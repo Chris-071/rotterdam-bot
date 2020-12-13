@@ -6,6 +6,8 @@ module.exports.run = async(client, message, args) => {
 
     const catId = "785596306185912350";
 
+    var reden = args.slice(0).join(" ");
+
     if (message.channel.parentID == catId) {
         message.channel.delete();
     } else {
@@ -16,6 +18,7 @@ module.exports.run = async(client, message, args) => {
     .setTitle(`Ticket Gesloten.`)
     .addField("Gesloten door: ", message.author)
     .addField("Ticket:", message.channel.name)
+    .addField("Reden: ", reden || "Niet opgegeven.")
     .setColor("BLUE");
 
     var logChannel =  message.member.guild.channels.cache.find(channel => channel.name === "ticket-logs");
