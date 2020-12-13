@@ -36,20 +36,6 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
-client.on("guildMemberAdd", member => {
-
-   var channel = member.guild.channels.cache.get('787651278226063400');
-
-   if(!channel) return;
-
-   var joinEmbed = new discord.MessageEmbed()
-   .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
-   .setDescription(`Welkom in ${member.guild.name}, ${member.user.username}.`)
-   .setColor("BLUE");
-
-   channel.send(joinEmbed);
-
-});
 
 
 
