@@ -15,7 +15,6 @@ module.exports.run = async(client, message, args) => {
     var logEmbed = new discord.MessageEmbed()
     .setTitle(`Ticket Gesloten.`)
     .addField("Gesloten door: ", message.author)
-    .addField("Ticket van: ", message.channel.name.filter(f => f.split("-").pop() === "ticket"))
     .addField("Ticket:", message.channel.name)
     .setColor("BLUE");
 
