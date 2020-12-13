@@ -42,11 +42,11 @@ client.on("guildMemberAdd", member => {
 
     var joinEmbed = new discord.MessageEmbed()
         .setDescription(`Welkom in ${member.guild.name}, ${member}.`)
-        .setFooter(`${message.guild.memberCount} Leden.`)
         .setColor("BLUE");
 
     channel.send(joinEmbed);
 
+    //       .setFooter(`${message.guild.memberCount} Leden.`)
 
 });
 
