@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
 
     var bool = false;
 
-    message.guild.channels.cache.array.forEach(channel => {
+    message.guild.channels.cache.forEach(channel => {
 
         if (channel.name == "Ticket" + "-" + nickname.toLowerCase()) {
 
