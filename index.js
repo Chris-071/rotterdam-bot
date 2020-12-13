@@ -37,13 +37,13 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on("guildMemberAdd", member => {
 
-    var channel = member.guild.channels.cache.find(channel => channel.name === 'algemeen');
+    var channel = member.guild.channels.cache.find(channel => channel.name === 'joins');
     if (!channel) return;
 
     var joinEmbed = new discord.MessageEmbed()
         .setDescription(`Welkom in ${member.guild.name}, ${member}.`)
         .setFooter(`${message.guild.memberCount} Leden.`)
-        .setColor("#14e378");
+        .setColor("BLUE");
 
     channel.send(joinEmbed);
 
