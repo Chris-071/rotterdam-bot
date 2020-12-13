@@ -4,7 +4,7 @@ module.exports.run = async(client, message, args) => {
 
 
     var commandsSpeler = "!help, !suggestie, !bug, !new"
-    var commandsStaff = "!ban, !kick, !warn, !training, !event, !claim, !unclaim, !close"
+    var commandsStaff = "!ban, !kick, !warn, !training, !event, !claim, !close"
     var commandsOwner = "!vergadering"
 
     var embed = new discord.MessageEmbed()
