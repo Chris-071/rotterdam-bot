@@ -73,7 +73,7 @@ module.exports.run = async (client, message, args) => {
                                 .addField("Eenheid:", antwoord1)
                                 .addField("Type Training:", antwoord2)
                                 .addField("Host:", message.author)
-                                .addField("Co-Host:", antwoord3)
+                                .addField("Co-Host:", antwoord4)
                                 .addField("Kijkers/Bewakers Toegestaan: ", antwoord5)
                                 .addField("Opmerkingen: ", antwoord6)
                                 .setColor("BLUE");
