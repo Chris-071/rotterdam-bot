@@ -5,6 +5,7 @@ client.commands = new discord.Collection();
 client.login(process.env.token)
 const fs = require("fs");
 const levelFile = require("./data/levels.json");
+const { join } = require("path");
 
 client.on("ready", async () => {
     console.log(`Bot is online`);
@@ -37,16 +38,16 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on("guildMemberAdd", member => {
 
-    var channel = member.guild.channels.cache.find(channel => channel.name === 'joins');
-    if (!channel) return;
+   var channel = member.guild.channels.cache.get('787651278226063400');
 
-    var joinEmbed = new discord.MessageEmbed()
-        .setDescription(`Welkom in ${member.guild.name}, ${member}.`)
-        .setColor("BLUE");
+   if(!channel) return;
 
-    channel.send(joinEmbed);
+   var joinEmbed = new discord.MessageEmbed()
+   .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
+   .setDescription(`Welkom in ${member.guild.name}, ${member.user.username}.`)
+   .setColor("BLUE");
 
-    //       .setFooter(`${message.guild.memberCount} Leden.`)
+   channel.send(joinEmbed);
 
 });
 
