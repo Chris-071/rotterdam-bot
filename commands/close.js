@@ -9,7 +9,13 @@ module.exports.run = async(client, message, args) => {
     var reden = args.slice(0).join(" ");
 
     if (message.channel.parentID == catId) {
-        message.channel.delete();
+        message.channel.setTopic(`Status: Gesloten! Door: ${message.author} (${message.author.id})`)
+        .then((msg) => {
+            setTimeout(function () {
+                message.channel.delete();
+            }, 5000)
+        });
+    
     } else {
         message.reply("Dit kan je alleen in een ticket doen.");
     }
