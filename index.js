@@ -48,7 +48,7 @@ client.on("messageDelete", messageDeleted => {
     var berichtLogDelEmbed = new discord.MessageEmbed()
     .setTitle("Bericht Verwijderd.")
     .addField("Gebruiker: ", messageDeleted.author.tag + ` (_${messageDeleted.author.id}_)`)
-    .addField("Kanaal: ", messageDeleted.channel + ` (_${messageDeleted.channel.id}_)`)
+    .addField("Kanaal: ", messageDeleted.channel.tag + ` (_${messageDeleted.channel.id}_)`)
     .addField("Bericht: ", content)
     .setColor("BLUE");
 
