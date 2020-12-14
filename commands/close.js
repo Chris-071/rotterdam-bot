@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
     var reden = args.slice(0).join(" ");
 
     var closeEmbed = new discord.MessageEmbed()
-        .setDescription("Ticket Word gesloten.")
+        .setDescription("Ticket Word gesloten over 3 seconden.")
         .setColor("BLUE");
 
     if (message.channel.parentID == catId) {
@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args) => {
             .then((msg) => {
                 setTimeout(function () {
                     message.channel.delete();
-                }, 5000)
+                }, 3000)
             });
 
     } else {
