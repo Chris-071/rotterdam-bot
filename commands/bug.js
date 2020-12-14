@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
         var embed = new discord.MessageEmbed()
             .setTitle("<:bug:786160912637100052> Bug")
             .addField("Bug:", antwoord1)
-            .setFooter(`Suggestie van ${message.author.tag} (${message.author.id})`)
+            .setFooter(`Bug van ${message.author.tag} (${message.author.id})`)
             .setColor("BLUE");
 
         message.channel.send(uitkomst).then(async msg => {
@@ -38,7 +38,7 @@ module.exports.run = async (client, message, args) => {
 
                 channel.send(embed);
                 msg.edit(gemaakt);
-                channel.setTopic(`Nieuwste Suggestie van: ${message.author} op ${message.CreatedAt}`)
+                channel.setTopic(`Nieuwste Bug van: ${message.author}.`)
 
             } else if (emoji === "❌") {
 
