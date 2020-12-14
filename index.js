@@ -37,6 +37,23 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 
+client.on("messageDelete", messageDeleted => {
+
+
+    if (messageDeleted.author.bot) return;
+
+    var content = messageDeleted.content;
+    if(!content) content = "Geen bericht gevonden.";
+
+    var berichtLogDelEmbed = new discord.MessageEmbed()
+    .setTitle("Bericht Verwijderd.")
+    .addField("Gebruiker: ", messageDeleted.author.tag + `(${messageDeleted.author.id})`)
+    .addField("Kanaal: ", messageDeleted.channel + `(${messageDeleted.channel.id})`)
+    .addField("Bericht: ", content);
+
+    client.channels.cache.find(c => c.name == "berichten-logs").send(berichtLogDelEmbed);
+});
+
 
 
 client.on("message", async message => {
