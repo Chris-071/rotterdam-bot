@@ -9,9 +9,13 @@ const { join } = require("path");
 
 client.on("ready", async () => {
     console.log(`Bot is online`);
-    client.user.setStatus("dnd");
-    client.user.setActivity("SOON ~ RTD [Rotterdam]", { type: "WATCHING" });
+    client.user.setActivity(`RTD ~ Rotterdam`, {
+        type: "STREAMING",
+        url: "https://www.twitch.tv/Chris071_"})
+        .then(presence => console.log(`Status is gezet naar ${presence.game ? presence.game.none : 'Geen'}`))
 });
+
+
 
 
 
