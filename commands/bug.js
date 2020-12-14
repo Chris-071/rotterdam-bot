@@ -38,6 +38,7 @@ module.exports.run = async (client, message, args) => {
 
                 channel.send(embed);
                 msg.edit(gemaakt);
+                channel.setTopic(`Nieuwste Suggestie van: ${message.author} op ${message.CreatedAt}`)
 
             } else if (emoji === "❌") {
 
