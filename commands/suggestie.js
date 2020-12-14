@@ -36,6 +36,7 @@ module.exports.run = async (client, message, args) => {
 
             if (emoji === "✔") {
 
+                channel.setTopic(`Nieuwste Suggestie van: ${message.author}.`)
                 channel.send(embed).then(embedMessage => {
                     embedMessage.react("✔");
                     embedMessage.react("❌");
