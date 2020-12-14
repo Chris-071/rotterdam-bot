@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
 
     if (message.channel.parentID == catId) {
         message.channel.setTopic(`Status: Gesloten! Door: ${message.author} (${message.author.id})`)
-        message.channel.bulkDelte(99);
+        message.channel.bulkDelete(99);
         message.channel.send(closeEmbed)
             .then((msg) => {
                 setTimeout(function () {
