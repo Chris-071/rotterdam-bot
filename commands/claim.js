@@ -12,6 +12,7 @@ module.exports.run = async(client, message, args) => {
 
     if (message.channel.parentID == catId) {
         message.channel.send(embed);
+        message.channel.topic = `Status: Geclaimd! Door: ${message.author} (${message.author.id})`
     } else {
         message.reply("Dit kan je alleen in een ticket doen.");
     }

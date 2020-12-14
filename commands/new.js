@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args) => {
 
     if (bool) return;
 
-    message.guild.channels.create("Ticket" + "-" + nickname.toLowerCase(), { type: 'text' }).then(
+    message.guild.channels.create("Ticket" + "-" + nickname.toLowerCase(), { type: 'text', topic: 'Status: Niet geclaimd.'}).then(
         (createdChannel) => {
             createdChannel.setParent(catId).then(
                 (settedParent) => {
