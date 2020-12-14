@@ -47,9 +47,10 @@ client.on("messageDelete", messageDeleted => {
 
     var berichtLogDelEmbed = new discord.MessageEmbed()
     .setTitle("Bericht Verwijderd.")
-    .addField("Gebruiker: ", messageDeleted.author.tag + `(${messageDeleted.author.id})`)
-    .addField("Kanaal: ", messageDeleted.channel + `(${messageDeleted.channel.id})`)
-    .addField("Bericht: ", content);
+    .addField("Gebruiker: ", messageDeleted.author.tag + ` (_${messageDeleted.author.id}_)`)
+    .addField("Kanaal: ", messageDeleted.channel + ` (_${messageDeleted.channel.id}_)`)
+    .addField("Bericht: ", content)
+    .setColor("BLUE");
 
     client.channels.cache.find(c => c.name == "berichten-logs").send(berichtLogDelEmbed);
 });
