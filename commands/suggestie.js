@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
         var embed = new discord.MessageEmbed()
             .setTitle("<:suggestion:786160911610019860> Suggestie")
             .addField("Suggestie:", antwoord1)
-            .setFooter(`Suggestie van ${message.author}`)
+            .setFooter(`Suggestie van ${message.author.tag} (${message.author.id})`)
             .setColor("BLUE");
 
         message.channel.send(uitkomst).then(async msg => {
