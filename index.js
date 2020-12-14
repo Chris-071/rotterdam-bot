@@ -4,18 +4,11 @@ const client = new discord.Client();
 client.commands = new discord.Collection();
 client.login(process.env.token)
 const fs = require("fs");
-const levelFile = require("./data/levels.json");
-const { join } = require("path");
 
 client.on("ready", async () => {
     console.log(`Bot is online`);
-    client.user.setStatus("dnd");
-    client.user.setActivity("SOON ~ RTD [Rotterdam]", { type: "WATCHING", status: "dnd" });
+    client.user.setActivity("SOON ~ RTD [Rotterdam]", { type: "WATCHING" });
 });
-
-
-
-
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -45,14 +38,14 @@ client.on("messageDelete", messageDeleted => {
     if (messageDeleted.author.bot) return;
 
     var content = messageDeleted.content;
-    if(!content) content = "Geen bericht gevonden.";
+    if (!content) content = "Geen bericht gevonden.";
 
     var berichtLogDelEmbed = new discord.MessageEmbed()
-    .setTitle("Bericht Verwijderd.")
-    .addField("Gebruiker: ", messageDeleted.author.tag + ` (_${messageDeleted.author.id}_)`)
-    .addField("Kanaal: ", messageDeleted.channel)
-    .addField("Bericht: ", content)
-    .setColor("BLUE");
+        .setTitle("Bericht Verwijderd.")
+        .addField("Gebruiker: ", messageDeleted.author.tag + ` (_${messageDeleted.author.id}_)`)
+        .addField("Kanaal: ", messageDeleted.channel)
+        .addField("Bericht: ", content)
+        .setColor("BLUE");
 
     client.channels.cache.find(c => c.name == "berichten-logs").send(berichtLogDelEmbed);
 });
