@@ -13,8 +13,10 @@ module.exports.run = async(client, message, args) => {
     if (message.channel.parentID == catId) {
         message.channel.send(embed);
         message.channel.topic = `Status: Geclaimd! Door: ${message.author} (${message.author.id})`
+        message.delete();
     } else {
-        message.reply("Dit kan je alleen in een ticket doen.");
+        message.reply("Dit kan je alleen in een ticket doen.").then(msg => msg.delete({ timeout: 3000 }));
+        message.delete();
     }
 
 
