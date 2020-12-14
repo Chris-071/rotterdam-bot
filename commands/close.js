@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 
-module.exports.run = async(client, message, args) => {
+module.exports.run = async (client, message, args) => {
 
     if (!message.member.roles.cache.get('785596843391582269')) return message.reply("Alleen mensen met de Support Team role kunnen dit.");
 
@@ -8,26 +8,32 @@ module.exports.run = async(client, message, args) => {
 
     var reden = args.slice(0).join(" ");
 
+    var closeEmbed = new discord.MessageEmbed()
+        .setDescription("Ticket Word gesloten.")
+        .setColor("BLUE");
+
     if (message.channel.parentID == catId) {
         message.channel.setTopic(`Status: Gesloten! Door: ${message.author} (${message.author.id})`)
-        .then((msg) => {
-            setTimeout(function () {
-                message.channel.delete();
-            }, 5000)
-        });
-    
+        message.channel.bulkDelte(99);
+        message.channel.send(closeEmbed)
+            .then((msg) => {
+                setTimeout(function () {
+                    message.channel.delete();
+                }, 5000)
+            });
+
     } else {
         message.reply("Dit kan je alleen in een ticket doen.");
     }
 
     var logEmbed = new discord.MessageEmbed()
-    .setTitle(`Ticket Gesloten.`)
-    .addField("Gesloten door: ", message.author)
-    .addField("Ticket:", message.channel.name)
-    .addField("Reden: ", reden || "Niet opgegeven.")
-    .setColor("BLUE");
+        .setTitle(`Ticket Gesloten.`)
+        .addField("Gesloten door: ", message.author)
+        .addField("Ticket:", message.channel.name)
+        .addField("Reden: ", reden || "Niet opgegeven.")
+        .setColor("BLUE");
 
-    var logChannel =  message.member.guild.channels.cache.find(channel => channel.name === "ticket-logs");
+    var logChannel = message.member.guild.channels.cache.find(channel => channel.name === "ticket-logs");
 
     logChannel.send(logEmbed);
 
