@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args) => {
 
     if (bool) return;
 
-    message.guild.channels.create("Ticket" + "-" + nickname.toLowerCase(), { type: 'text', topic: 'Status: Niet geclaimd.'}).then(
+    message.guild.channels.create("Ticket" + "-" + nickname.toLowerCase(), { type: 'text', topic: 'Status: Niet geclaimd.' }).then(
         (createdChannel) => {
             createdChannel.setParent(catId).then(
                 (settedParent) => {
@@ -50,6 +50,14 @@ module.exports.run = async (client, message, args) => {
                             }, 500)
                         });
 
+                    settedParent.updateOverwrite(message.author.id, {
+                        CREATE_INSTANT_INVITE: false,
+                        READ_MESSAGES: true,
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        CONNECT: true
+                    });
+
                     settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@everyone'), {
                         SEND_MESSAGES: false,
                         VIEW_CHANNEL: false
@@ -60,21 +68,13 @@ module.exports.run = async (client, message, args) => {
                         VIEW_CHANNEL: true
                     });
 
-                    settedParent.updateOverwrite(message.author.id, {
-                        CREATE_INSTANT_INVITE: false,
-                        READ_MESSAGES: true,
-                        SEND_MESSAGES: true,
-                        ATTACH_FILES: true,
-                        CONNECT: true
-                    });
-
                     var embedTicket = new discord.MessageEmbed()
                         .setTitle(`Ticket ${message.author.username}`)
                         .setColor("BLUE")
                         .setDescription(`Hallo ${message.author.username}, Je word zo snel mogelijk geholpen door het Support Team.`)
                         .addField("Reden van ticket: ", reden || "Niet opgegeven.");
 
-                        settedParent.send(`<@785596843391582269> <@${message.author.id}>`).then(settedParent.send(embedTicket));
+                    settedParent.send(`<@785596843391582269> <@${message.author.id}>`).then(settedParent.send(embedTicket));
                 }
             ).catch(err => {
                 print("Er is een error bij het ticket systeem.")
