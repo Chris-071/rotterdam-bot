@@ -33,13 +33,12 @@ module.exports.run = async(client, message, args) => {
 
 
     if (roleSelected === 'Sneak-Peak'){
-
-        if(message.member.roles.cache.get(sneakPeak)){
-            message.member.roles.remove(sneakPeak);
-            message.channel.send(embedRoleRemoved);
-        } else {
+        if(!message.member.roles.cache.get(sneakPeak)){
             message.member.roles.add(sneakPeak);
             message.channel.send(embedRoleadded);
+        } else {
+            message.member.roles.remove(sneakPeak);
+            message.channel.send(embedRoleRemoved);
         }
     }
 
