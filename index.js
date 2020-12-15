@@ -51,6 +51,22 @@ client.on("messageDelete", messageDeleted => {
 });
 
 
+client.on("message", async message => {
+
+    const channel = message.guild.channels.get("788361937150148678");
+
+    var localnummer = "1"
+    var nummer = "1"
+    var nextNummer = nummer + 1
+
+    if (channel.awaitMessages.nummer == nextNummer) {
+        message.react("✔");
+    } else {
+        message.react("❌");
+    }
+})
+
+
 
 client.on("message", async message => {
 
