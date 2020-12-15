@@ -50,27 +50,27 @@ module.exports.run = async (client, message, args) => {
                             }, 500)
                         });
 
-                        settedParent.updateOverwrite(message.author.id, {
-                            SEND_MESSAGES: true,
-                            ATTACH_FILES: true,
-                            VIEW_CHANNEL: true
-                        });
-    
-                        settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@everyone'), {
-                            SEND_MESSAGES: false,
-                            VIEW_CHANNEL: false
-                        });
+                    settedParent.updateOverwrite(message.author.id, {
+                        SEND_MESSAGES: true,
+                        ATTACH_FILES: true,
+                        VIEW_CHANNEL: true
+                    });
 
-                        settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@Geverifieerde Speler'), {
-                            SEND_MESSAGES: false,
-                            VIEW_CHANNEL: false
-                        });
-    
-                        settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@Support Team'), {
-                            READ_MESSAGES: true,
-                            VIEW_CHANNEL: true,
-                            SEND_MESSAGES: true
-                        });
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@Support Team'), {
+                        READ_MESSAGES: true,
+                        VIEW_CHANNEL: true,
+                        SEND_MESSAGES: true
+                    });
+
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@everyone'), {
+                        SEND_MESSAGES: false,
+                        VIEW_CHANNEL: false
+                    });
+
+                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@Geverifieerde Speler'), {
+                        SEND_MESSAGES: false,
+                        VIEW_CHANNEL: false
+                    });
 
                     var embedTicket = new discord.MessageEmbed()
                         .setTitle(`Ticket ${message.author.username}`)
