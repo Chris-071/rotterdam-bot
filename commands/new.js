@@ -50,23 +50,21 @@ module.exports.run = async (client, message, args) => {
                             }, 500)
                         });
 
-                    settedParent.updateOverwrite(message.author.id, {
-                        CREATE_INSTANT_INVITE: false,
-                        READ_MESSAGES: true,
-                        SEND_MESSAGES: true,
-                        ATTACH_FILES: true,
-                        CONNECT: true
-                    });
-
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@everyone'), {
-                        SEND_MESSAGES: false,
-                        VIEW_CHANNEL: false
-                    });
-
-                    settedParent.updateOverwrite(message.guild.roles.cache.get("785596843391582269"), {
-                        SEND_MESSAGES: true,
-                        VIEW_CHANNEL: true
-                    });
+                        settedParent.updateOverwrite(message.author.id, {
+                            SEND_MESSAGES: true,
+                            ATTACH_FILES: true,
+                            VIEW_CHANNEL: true
+                        });
+    
+                        settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@everyone'), {
+                            SEND_MESSAGES: false,
+                            VIEW_CHANNEL: false
+                        });
+    
+                        settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@Support Team'), {
+                            READ_MESSAGES: true,
+                            SEND_MESSAGES: true
+                        });
 
                     var embedTicket = new discord.MessageEmbed()
                         .setTitle(`Ticket ${message.author.username}`)
