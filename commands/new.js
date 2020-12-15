@@ -82,11 +82,11 @@ module.exports.run = async (client, message, args) => {
                 }
             ).catch(err => {
                 print("Er is een error bij het ticket systeem.")
-            })
+            });
         }
     ).catch(err => {
         print("Er is een error bij het ticket systeem.")
-    })
+    });
 
 
 
