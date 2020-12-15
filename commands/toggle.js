@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async(client, message, args) => {
 
     var roleSelected = args[0]
 
@@ -11,34 +11,35 @@ module.exports.run = async (client, message, args) => {
     var event = message.guild.roles.cache.get("788345404273459251");
     var giveaway = message.guild.roles.cache.get("788345415543422976");
 
-    var roles = ['Sneak-peak', 'Mededeling', 'Update', 'Training', 'Event', 'Giveaway', 'All']
+    var roles = ['Sneak-peak','Mededeling','Update','Training','Event','Giveaway','All']
 
     var fout = new discord.MessageEmbed()
-        .setTitle("Je kunt alleen uit de volgende rollen kiezen.")
-        .setDescription(roles)
-        .setColor("BLUE");
+    .setTitle("Je kunt alleen uit de volgende rollen kiezen.")
+    .setDescription(roles)
+    .setColor("BLUE");
 
 
     var embedRoleadded = new discord.MessageEmbed()
-        .setDescription(`Succesvol ${roleSelected} toegevoegd.`)
-        .setColor("BLUE");
+    .setDescription(`Succesvol ${roleSelected} toegevoegd.`)
+    .setColor("BLUE");
 
     var embedRoleRemoved = new discord.MessageEmbed()
-        .setDescription(`Succesvol ${roleSelected} Verwijderd.`)
-        .setColor("BLUE");
+    .setDescription(`Succesvol ${roleSelected} Verwijderd.`)
+    .setColor("BLUE");
 
-    if (roleSelected == null) {
+    if(roleSelected == null){
         return message.reply(fout);
     }
 
 
-    if (roleSelected === 'Sneak-Peak') {
-        if (!message.member.roles.cache.get(sneakPeak)) {
+    if (roleSelected === 'Sneak-Peak'){
+        if(!message.member.roles.cache.get(sneakPeak)){
             message.member.roles.add(sneakPeak);
             message.channel.send(embedRoleadded);
-        } if (message.member.roles.cache.get(sneakPeak)) {
-            return message.member.roles.remove(sneakPeak)
-                .then(message.channel.send(embedRoleRemoved));
+        } 
+        if(message.member.roles.cache.get(sneakPeak)) {
+            message.member.roles.remove(sneakPeak);
+            message.channel.send(embedRoleRemoved);
         }
     }
 

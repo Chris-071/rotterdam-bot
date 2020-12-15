@@ -31,16 +31,16 @@ module.exports.run = async (client, message, args) => {
     if (bool) return;
 
     message.guild.channels.create("Ticket" + "-" + nickname.toLowerCase(), { type: 'text', topic: 'Status: Niet geclaimd.' }).then(
-        (createdChannel) => {
-            createdChannel.setParent(catId).then(
-                (settedParent) => {
+        (ticketCreated) => {
+            ticketCreated.setParent(catId).then(
+                (settedCat) => {
 
                     var maak1 = new discord.MessageEmbed()
                         .setDescription(`<:aanmaken:786160912943677440> Je ticket word aangemaakt.`)
                         .setColor("BLUE");
 
                     var maak2 = new discord.MessageEmbed()
-                        .setDescription(`<:succesvol:786160912192634895> Je ticket is succesvol aangemaakt. [ <#${settedParent.id}> ]`)
+                        .setDescription(`<:succesvol:786160912192634895> Je ticket is succesvol aangemaakt. [ <#${settedCat.id}> ]`)
                         .setColor("BLUE");
 
                     message.channel.send(maak1)
@@ -50,24 +50,24 @@ module.exports.run = async (client, message, args) => {
                             }, 500)
                         });
 
-                    settedParent.updateOverwrite(message.author.id, {
+                    settedCat.updateOverwrite(message.author.id, {
                         SEND_MESSAGES: true,
                         ATTACH_FILES: true,
                         VIEW_CHANNEL: true
                     });
 
-                    settedParent.updateOverwrite(message.guild.roles.cache.get('785596843391582269'), {
+                    settedCat.updateOverwrite(message.guild.roles.cache.get('785596843391582269'), {
                         READ_MESSAGES: true,
                         VIEW_CHANNEL: true,
                         SEND_MESSAGES: true
                     });
 
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@everyone'), {
+                    settedCat.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@everyone'), {
                         SEND_MESSAGES: false,
                         VIEW_CHANNEL: false
                     });
 
-                    settedParent.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@Geverifieerde Speler'), {
+                    settedCat.updateOverwrite(message.guild.roles.cache.find(x => x.name === '@Geverifieerde Speler'), {
                         SEND_MESSAGES: false,
                         VIEW_CHANNEL: false
                     });
@@ -78,7 +78,7 @@ module.exports.run = async (client, message, args) => {
                         .setDescription(`Hallo ${message.author.username}, Je word zo snel mogelijk geholpen door het Support Team.`)
                         .addField("Reden van ticket: ", reden || "Niet opgegeven.");
 
-                    settedParent.send(`<@785596843391582269> <@${message.author.id}>`).then(settedParent.send(embedTicket));
+                    settedCat.send(`<@785596843391582269> <@${message.author.id}>`).then(settedCat.send(embedTicket));
                 }
             ).catch(err => {
                 print("Er is een error bij het ticket systeem.")
