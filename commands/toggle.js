@@ -36,7 +36,7 @@ module.exports.run = async(client, message, args) => {
         if(!message.member.roles.cache.get(sneakPeak)){
             message.member.roles.add(sneakPeak);
             message.channel.send(embedRoleadded);
-        } else if(message.member.roles.cache.get(sneakPeak)) {
+        } if(message.member.roles.cache.get(sneakPeak)) {
             message.member.roles.remove(sneakPeak);
             message.channel.send(embedRoleRemoved);
         }
