@@ -22,15 +22,8 @@ module.exports.run = async(client, message, args) => {
     @Developer ~ Bouwer.
     @Proef-Developer ~ Developer in Opleiding.
     @OG ~ Deze role krijg je als je heel lang bij Rotterdam zit.
-    
-    @Burgemeester ~ Burgemeester van Rotterdam.
-    @Gemeente stafff ~ Staff van de gemeente.
-    
-    Permanenten Invite Link 
-    https://discord.gg/Thgw5YDgbs
-    https://discord.gg/Thgw5YDgbs
-    https://discord.gg/Thgw5YDgbs
     `)
+    .addField("[Invite link](https://discord.gg/Thgw5YDgbs) (Permanent)", "https://discord.gg/Thgw5YDgbs")
     .setColor("BLUE")
     .setFooter(`©${message.guild.name} ~ 2020/2021`);
 
@@ -51,60 +44,32 @@ module.exports.run = async(client, message, args) => {
 
     var regelsEmbed = new discord.MessageEmbed()
     .setTitle(`Regels Rotterdam!`)
-    .setDescription(`
-    📄 | REGELS VOOR DISCORD-SERVER:
+    .addField(" 1.1 - Wees respectvol!"," U moet alle gebruikers respecteren, ongeacht uw voorkeur voor hen. Behandel anderen zoals u zelf behandeld zou willen worden.")
+    .addField(" 1.2 - Je respecteert een moderator of hoger!","    Als een moderator je aanspreekt, moet je ook luisteren, een moderator of hoger heeft het recht om je te waarschuwen / schoppen / verbannen! En als het van toepassing is, meld u dan.    ")
+    .addField("1.3 - Geen racistische of haatdragende taal!","Je maakt geen racistische of narcistische opmerkingen tegen een ander.")
+    .addField(" 1.4 - Geen ongepast taalgebruik! 1.4 - Geen ongepast taalgebruik!"," Vloeken op de onenigheidsserver is echter ook verboden.")
+    .addField(" 1.5 - Geen spam!","Stuur niet veel kleine berichtjes achter elkaar. Stoor de chat niet door te spammen.")
+    .addField("    1.6 - Geen pornografisch / volwassen / ander NSFW-materiaal!","Dit is een communityserver en niet bedoeld om dit soort materiaal te delen.")
+    .addField(" 1.7 - Geen reclame!","We tolereren geen enkele vorm van advertenties, of het nu voor andere apparaten of streams is. U kunt uw inhoud in het mediakanaal plaatsen als deze relevant is en echte waarde biedt. (ook geen reclame in dm)")
+    .addField("1.8 - Geen aanstootgevende namen en profielfoto's!","U wordt gevraagd uw naam of foto te wijzigen als een HR of hoger dit ongepast vindt.")
+    .addField("1.9 - Raid de server niet!"," Het vermelden van een Raid is niet toegestaan.")
+    .addField("1.10 - Directe en indirecte bedreigingen!","Bedreigingen voor andere gebruikers door DDoS, Death, DoX, misbruik en andere kwaadaardige bedreigingen zijn ten strengste verboden en verboden.")
+    .addField("1.11 - Volg de Discord Community-richtlijnen!","Je kunt ze hier vinden: [Discord guidelines](https://discordapp.com/guidelines).")
+    .setColor("BLUE")
+    .setFooter(`©${message.guild.name} ~ 2020/2021`);
 
-    1.1 - Wees respectvol!
-    U moet alle gebruikers respecteren, ongeacht uw voorkeur voor hen. Behandel anderen zoals u zelf behandeld zou willen worden.
-    
-    
-    1.2 - Je respecteert een moderator of hoger!
-    Als een moderator je aanspreekt, moet je ook luisteren, een moderator of hoger heeft het recht om je te waarschuwen / schoppen / verbannen! En als het van toepassing is, meld u dan.
-    
-    
-    
-    1.3 - Geen racistische of haatdragende taal!
-    Je maakt geen racistische of narcistische opmerkingen tegen een ander.
-    
-    
-    
-    1.4 - Geen ongepast taalgebruik!
-    Vloeken op de onenigheidsserver is echter ook verboden.
-    
-    
-    
-    1.5 - Geen spam!
-    Stuur niet veel kleine berichtjes achter elkaar. Stoor de chat niet door te spammen.
-    
-    
-    
-    1.6 - Geen pornografisch / volwassen / ander NSFW-materiaal!
-    Dit is een communityserver en niet bedoeld om dit soort materiaal te delen.
-    
-    
-    
-     1.7 - Geen reclame!
-    We tolereren geen enkele vorm van advertenties, of het nu voor andere apparaten of streams is. U kunt uw inhoud in het mediakanaal plaatsen als deze relevant is en echte waarde biedt. (ook geen reclame in dm) ..
-    
-    
-    
-    1.8 - Geen aanstootgevende namen en profielfoto's!
-    U wordt gevraagd uw naam of foto te wijzigen als een HR of hoger dit ongepast vindt.
-    
-    
-    
-    1.9 - Overval de server niet!
-    Het vermelden van een overval is niet toegestaan.
-    
-    
-    
-    1.10 - Directe en indirecte bedreigingen!
-    Bedreigingen voor andere gebruikers door DDoS, Death, DoX, misbruik en andere kwaadaardige bedreigingen zijn ten strengste verboden en verboden.
-    
-    
-    
-    1.11 - Volg de Discord Community-richtlijnen!
-    Je kunt ze hier vinden: [Discord guidelines](https://discordapp.com/guidelines).`)
+
+    var staffInfoEmbed = new discord.MessageEmbed()
+    .setTitle(`Staff Informatie Rotterdam!`)
+    .addField("Warnen in game", "Je kan warnen bij 1 van de onderstaande redenen. \n\n -18+ Taalgebruik \nAbuse \nRDM \nFRP \nSchelden met (Heftige) ziektes \nLeaven/Switch Team uit jail. \nOngepast Taalgebruik.")
+    .addField("Schorsen","Wanneer een speler zich heftig misdraagt bij een eenheid kan je aanvragen bij een HC om die te schorsen.")
+    .addField("Bannen","Bij de 5 warnings in totaal krijgt iemand een sban (Serverban), dat is een ban voor één dag. Een permanente ban krijg je bij warning 30. Dit kan alleen een superadministrator doen.  ")
+    .addField("Handelen in #algemeen","Wanneer iemand zich misdraagt in algemeen ga je hier niet op in of de discussie opzoeken. Je gaat als het nodig is aanspreken in zijn dm of warnen in de staff bot channel.")
+    .addField("Warnen/bannen in discord server. ","Wanneer iemand zich misdraagt in de server kan je hem warnen of bannen in het staff bot channel kanaal.")
+    .addField("Tickets","Één HR/HC behandelt de ticket, je komt hier dan anders ook niet in! HC+ kan iemand taggen of mengen als iemand lang niet reageerd of het gaat om een HR klacht. \n\n HR klacht -> Tagg een HC en ga uit de ticket. \nHC klacht -> Tagg een OC+. \nVraag/klacht -> Behandel hem zelf. \nAdvertentie -> Tagg een manager+.")
+    .addField("Exploiter","Als er een exploiter is maak je bewijs en stuur je het in #deleted-channel, je geeft hem geen aandacht! Dus niet jailen ect.")
+    .addField("Ontslag","Als je er over nadenkt om ontslag te nemen kan je altijd het beste eerst met een HC of hoger in gesprek gaan, zodat jullie samen tot een oplossing kunnen komen.")
+    .addField("Admin Abuse","Admin Abuse is het misbruiken van je commands. De volgende commands mag je alleen in game gebruiken! \n\n :watch (Checken voor een exploiter of FRP) \n:fly (Iemand jailen of voor een training) \n:noclip/:clip (Tijdens een training of jail) \n:re (Tijdens een training of als het noodzakelijk is) \n:spawn (Tijdens een training, melding of iemand voor overlast zorgt) \n:kick (Tijdens een training of als iemand voor overlast zorgt) \n:tp (Tijdens een training of als het noodzakelijk is) ")
     .setColor("BLUE")
     .setFooter(`©${message.guild.name} ~ 2020/2021`);
 
@@ -112,6 +77,10 @@ module.exports.run = async(client, message, args) => {
     message.channel.send(welkomEmbed);
     message.channel.send(regelsEmbed);
     message.channel.send(groepenEmbed);
+    message.channel.send(staffInfoEmbed);
+
+
+
 
 
 }
