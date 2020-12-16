@@ -17,7 +17,7 @@ const activiteiten = [
 client.on("ready", async () => {
     console.log(`Bot is online`);
     var i = 0;
-    setInterval(() => client.user.setActivity(`${activiteiten[i++ % activiteiten.length]}`, { type: 'WATCHING', status: 'dnd'}), 1000);
+    setInterval(() => client.user.setActivity(`${activiteiten[i++ % activiteiten.length]}`, { type: 'WATCHING', status: 'dnd' }), 1000);
 });
 
 fs.readdir("./commands/", (err, files) => {
@@ -122,22 +122,24 @@ client.on("message", async message => {
             setTimeout(() => {
                 message.channel.send(embed2);
             }, wachtTijdTussen)
-                .then(setTimeout(() => {
+
+                (setTimeout(() => {
                     message.channel.send(embed3);
                 }, wachtTijdTussen))
-                .then(setTimeout(() => {
+
+                (setTimeout(() => {
                     message.channel.send(embed4);
                 }, wachtTijdTussen))
 
-                .then(setTimeout(() => {
+                (setTimeout(() => {
                     message.channel.send(embed5);
                 }, wachtTijdTussen))
 
-                .then(setTimeout(() => {
+                (setTimeout(() => {
                     message.channel.send(embed6);
                 }, wachtTijdTussen))
 
-                .then(setTimeout(() => {
+                (setTimeout(() => {
                     message.channel.send(embed7);
                     client.destroy(token);
                 }, wachtijdSd))
