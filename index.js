@@ -87,7 +87,7 @@ client.on("message", async message => {
 });
 
 
-if (command === `${prefix}shutdown`) {
+if (commands === `${prefix}shutdown`) {
     if (message.author.id === "421717020288221186") {
 
         const wachtTijdTussen = "1000"
