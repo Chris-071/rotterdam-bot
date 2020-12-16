@@ -3,7 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
     var Suggestie = new discord.MessageEmbed()
-        .setDescription(`Hallo ${message.author}, Vertel wat jou 'Suggestie' is.`)
+        .setDescription(`Hallo ${message.author}, Beschrijf wat jou 'Suggestie' is.`)
         .setColor("BLUE");
 
 
