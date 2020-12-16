@@ -3,7 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
     var bug = new discord.MessageEmbed()
-        .setDescription(`Hallo ${message.author}, Vertel wat jou 'Bug' is.`)
+        .setDescription(`Hallo ${message.author}, Beschrijf wat jou 'Bug' is.`)
         .setColor("BLUE");
 
 
