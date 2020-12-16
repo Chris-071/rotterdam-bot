@@ -17,7 +17,9 @@ const activiteiten = [
 client.on("ready", async () => {
     console.log(`Bot is online`);
     var i = 0;
-    setInterval(() => client.user.setActivity(`${activiteiten[i++ % activiteiten.length]}`, { type: 'WATCHING', status: 'dnd' }), 1000);
+    setInterval(() => client.user.setActivity(`${activiteiten[i++ % activiteiten.length]}`, { type: 'WATCHING' }), 1000);
+
+    client.user.setPrescense({status: 'dnd'})
 });
 
 fs.readdir("./commands/", (err, files) => {
