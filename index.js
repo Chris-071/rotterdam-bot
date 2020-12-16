@@ -82,22 +82,6 @@ client.on("message", async message => {
 
     var msg = message.content.toLowerCase();
 
-    if (command === `${prefix}shutdown`) {
-        if (message.author.id === "421717020288221186") {
 
-            var sdEmbed = new discord.MessageEmbed()
-                .setDescription(`Shuting Down..`)
-                .setFooter(`Systeem is uitgeschakeld. Wacht tot de bot is uitgeschakeld en start hem dan opnieuw op.`)
-                .setColor("BLUE");
-
-            message.channel.send(sdEmbed);
-            client.destroy(token);
-
-
-
-        } else {
-            message.reply(`Alleen de bot maken kan dit.`)
-        }
-    }
 
 });
