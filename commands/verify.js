@@ -1,9 +1,9 @@
-const discord = require("discord.js");
+const Discord = require("discord.js");
 const rbx = require("noblox.js")
 
 module.exports.run = async (client, message, args) => {
 
-    let msg = await message.channel.send("Awaiting Prompt")
+    let msg = await message.channel.send("Prompt Gestart.")
 
 
     function makeid() {
