@@ -3,6 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
     var bug = new discord.MessageEmbed()
+        .setTitle("Prompt")
         .setDescription(`Hallo ${message.author}, Beschrijf wat jou 'Bug' is.`)
         .setColor("BLUE");
 
@@ -15,13 +16,14 @@ module.exports.run = async (client, message, args) => {
         var antwoord1 = antwoord.first();
 
         var uitkomst = new discord.MessageEmbed()
-            .setTitle("Bug is aangemaakt")
+            .setTitle("Prompt")
             .setColor("BLUE")
             .setDescription(`Bug: ${antwoord1}, Is dit oke?`);
 
 
         var gemaakt = new discord.MessageEmbed()
-            .setTitle("Bedankt voor je Bug!")
+            .setTitle("Prompt")
+            .setDescription("Bedankt voor je Bug!")
             .setColor("BLUE");
 
         var embed = new discord.MessageEmbed()

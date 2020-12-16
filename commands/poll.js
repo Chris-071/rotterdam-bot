@@ -2,9 +2,10 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`Alleen staff leden kunnen dit. Ben jij een staff lid maar werkt dit niet heb je niet de juiste permissions. (**MANAGE_MESSAGES**)`)
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply(`Alleen staff leden kunnen dit. Ben jij een staff lid maar werkt dit niet heb je niet de juiste permissions. (**MANAGE_MESSAGES**)`)
 
     var Poll = new discord.MessageEmbed()
+        .setTitle("Prompt")
         .setDescription(`Hallo ${message.author}, Beschrijf hier wat jou poll is.`)
         .setColor("BLUE");
 
@@ -17,13 +18,14 @@ module.exports.run = async (client, message, args) => {
         var antwoord1 = antwoord.first();
 
         var uitkomst = new discord.MessageEmbed()
-            .setTitle("Poll is aangemaakt")
+            .setTitle("Prompt")
             .setColor("BLUE")
             .setDescription(`Poll: ${antwoord1}, Is dit oke?`);
 
 
         var gemaakt = new discord.MessageEmbed()
-            .setTitle("Bedankt voor je Poll!")
+            .setTitle("Prompt")
+            .setDescription("Bedankt voor je Poll!")
             .setColor("BLUE");
 
         var embed = new discord.MessageEmbed()
