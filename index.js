@@ -19,7 +19,7 @@ client.on("ready", async () => {
     var i = 0;
     setInterval(() => client.user.setActivity(`${activiteiten[i++ % activiteiten.length]}`, { type: 'WATCHING' }), 1000);
 
-    client.user.setPrescense({status: 'dnd'})
+    client.user.setPrescense({ status: 'dnd' })
 });
 
 fs.readdir("./commands/", (err, files) => {
@@ -84,73 +84,70 @@ client.on("message", async message => {
 
     var msg = message.content.toLowerCase();
 
+    if (command === `${prefix}shutdown`) {
+        if (message.author.id === "421717020288221186") {
 
+            const wachtTijdTussen = "1000"
+            const wachtijdSd = "2000"
+
+            var embed1 = new discord.MessageEmbed()
+                .setDescription(`Proces opstarten..`)
+                .setColor("BLUE");
+
+            var embed2 = new discord.MessageEmbed()
+                .setDescription(`Proces laden..`)
+                .setColor("BLUE");
+
+            var embed3 = new discord.MessageEmbed()
+                .setDescription(`Proces starten..`)
+                .setColor("BLUE");
+
+            var embed4 = new discord.MessageEmbed()
+                .setDescription(`Proces klaarmaken..`)
+                .setColor("BLUE");
+
+            var embed5 = new discord.MessageEmbed()
+                .setDescription(`Proces opgestart!`)
+                .setColor("BLUE");
+
+            var embed6 = new discord.MessageEmbed()
+                .setDescription(`Shutdown klaarmaken..`)
+                .setColor("BLUE");
+
+            var embed7 = new discord.MessageEmbed()
+                .setDescription(`Shuting Down..`)
+                .setFooter(`Systeem is uitgeschakeld. Wacht tot de bot is uitgeschakeld en start hem dan opnieuw op.`)
+                .setColor("BLUE");
+
+            message.channel.send(embed1)
+
+            setTimeout(() => {
+                message.channel.send(embed2);
+            }, wachtTijdTussen)
+                .then(setTimeout(() => {
+                    message.channel.send(embed3);
+                }, wachtTijdTussen))
+                .then(setTimeout(() => {
+                    message.channel.send(embed4);
+                }, wachtTijdTussen))
+
+                .then(setTimeout(() => {
+                    message.channel.send(embed5);
+                }, wachtTijdTussen))
+
+                .then(setTimeout(() => {
+                    message.channel.send(embed6);
+                }, wachtTijdTussen))
+
+                .then(setTimeout(() => {
+                    message.channel.send(embed7);
+                    client.destroy(token);
+                }, wachtijdSd))
+
+
+        } else {
+            message.reply(`Alleen de bot maken kan dit.`)
+        }
+    }
 
 });
-
-
-if (commands === `${prefix}shutdown`) {
-    if (message.author.id === "421717020288221186") {
-
-        const wachtTijdTussen = "1000"
-        const wachtijdSd = "2000"
-
-        var embed1 = new discord.MessageEmbed()
-            .setDescription(`Proces opstarten..`)
-            .setColor("BLUE");
-
-        var embed2 = new discord.MessageEmbed()
-            .setDescription(`Proces laden..`)
-            .setColor("BLUE");
-
-        var embed3 = new discord.MessageEmbed()
-            .setDescription(`Proces starten..`)
-            .setColor("BLUE");
-
-        var embed4 = new discord.MessageEmbed()
-            .setDescription(`Proces klaarmaken..`)
-            .setColor("BLUE");
-
-        var embed5 = new discord.MessageEmbed()
-            .setDescription(`Proces opgestart!`)
-            .setColor("BLUE");
-
-        var embed6 = new discord.MessageEmbed()
-            .setDescription(`Shutdown klaarmaken..`)
-            .setColor("BLUE");
-
-        var embed7 = new discord.MessageEmbed()
-            .setDescription(`Shuting Down..`)
-            .setFooter(`Systeem is uitgeschakeld. Wacht tot de bot is uitgeschakeld en start hem dan opnieuw op.`)
-            .setColor("BLUE");
-
-        message.channel.send(embed1)
-
-        setTimeout(() => {
-            message.channel.send(embed2);
-        }, wachtTijdTussen)
-        .then(setTimeout(() => {
-            message.channel.send(embed3);
-        }, wachtTijdTussen))
-        .then(setTimeout(() => {
-            message.channel.send(embed4);
-        }, wachtTijdTussen))
-
-        .then(setTimeout(() => {
-            message.channel.send(embed5);
-        }, wachtTijdTussen))
-
-        .then(setTimeout(() => {
-            message.channel.send(embed6);
-        }, wachtTijdTussen))
-
-        .then(setTimeout(() => {
-            message.channel.send(embed7);
-            client.destroy(token);
-        }, wachtijdSd))
-
-
-    } else {
-        message.reply(`Alleen de bot maken kan dit.`)
-    }
-}
