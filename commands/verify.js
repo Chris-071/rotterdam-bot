@@ -63,7 +63,7 @@ module.exports.run = async (client, message, args) => {
                                         .setFooter("Verifying..")
                                         .setTimestamp()
                                     msg.channel.send(verified)
-                                    message.member.roles.add(message.guild.roles.find(r => r.name == "Geverifieerde Speler"))
+                                    message.member.roles.add(message.guild.roles.cache.find(x => x.name === "Geverifieerde Speler"));
                                     message.member.setNickname(m.content)
 
 
