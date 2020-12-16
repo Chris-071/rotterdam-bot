@@ -8,7 +8,7 @@ const fs = require("fs");
 const activiteiten = [
     `!help`,
     `Rotterdam The Netherlands`,
-    `Bot gemaakt door: Chris071_#8253`
+    `Bot gemaakt door: Chris071_`,
     `Game ~ SOON!`
 
 ];
