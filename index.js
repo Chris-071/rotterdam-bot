@@ -5,9 +5,18 @@ client.commands = new discord.Collection();
 client.login(process.env.token)
 const fs = require("fs");
 
+const activiteiten = [
+    `!help`,
+    `Rotterdam The Netherlands`,
+    `Bot gemaakt door: Chris071_#8253`
+    `Game ~ SOON!`
+
+];
+
 client.on("ready", async () => {
     console.log(`Bot is online`);
-    client.user.setActivity("SOON ~ RTD [Rotterdam]", { type: "WATCHING" });
+    var i = 0;
+    setInterval(() => client.user.setActivity(`${activiteiten[i++ % activiteiten.length]}`, { type: 'WATCHING', status: 'dnd' }), 1000);
 });
 
 fs.readdir("./commands/", (err, files) => {
