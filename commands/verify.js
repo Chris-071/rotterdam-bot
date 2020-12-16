@@ -3,6 +3,10 @@ const rbx = require("noblox.js")
 
 module.exports.run = async (client, message, args) => {
 
+
+    try {
+        
+
     let msg = await message.channel.send("Prompt Gestart.")
 
 
@@ -82,6 +86,17 @@ module.exports.run = async (client, message, args) => {
             })
         })
     })
+
+} catch (error) {
+        if(error){
+            var errEmbed = new Discord.MessageEmbed()
+            .setColor("BLUE")
+            .setTitle(`${message.author} Er is een error.`)
+            .setDescription(error);
+
+            message.channel.send(errEmbed);
+        }
+}
 };
 
 
