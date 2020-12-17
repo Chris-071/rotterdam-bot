@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
     if (message.channel.parentID == catId) {
         message.channel.send(embed);
 
-        message.channel.updateOverWrite(addUser, {
+        message.channel.updateOverwrite(addUser, {
             SEND_MESSAGES: true,
             ATTACH_FILES: true,
             VIEW_CHANNEL: true
