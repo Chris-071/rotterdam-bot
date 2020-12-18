@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
 
-    if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("Je hebt niet de juiste permissions voor dit.");
+    if (!message.member.roles.cache.get('785488289267580988')) return message.reply("Alleen HC+ kan dit.");
 
     var logChannel = message.guild.channels.cache.find(channel => channel.name === 'logs');
     if(!logChannel) return message.reply("Kan het kanaal #logs niet vinden.");

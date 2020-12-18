@@ -2,7 +2,7 @@ const discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
 
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return;
+    if (!message.member.roles.cache.get('785596843391582269')) return message.reply('Alleen HR+ kan dit.');
 
     var eenheid = new discord.MessageEmbed()
         .setDescription("Wat is de `Eenheid` van de training?")
