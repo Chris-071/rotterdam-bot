@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
         .setColor("BLUE");
 
 
-    var channel = message.guild.channels.cache.get('786166699489493043');
+    var channel = message.guild.channels.cache.get('788713272965726218');
 
     message.channel.send(Poll);
 
@@ -40,7 +40,10 @@ module.exports.run = async (client, message, args) => {
 
             if (emoji === "✔") {
 
-                channel.send(embed);
+                channel.send(embed).then(embedR => {
+                    embedR.React('👍');
+                    embedR.React('👎');
+                });
                 msg.edit(gemaakt);
                 channel.setTopic(`Nieuwste Poll van: ${message.author}.`)
 

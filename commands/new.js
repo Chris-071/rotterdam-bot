@@ -81,11 +81,11 @@ module.exports.run = async (client, message, args) => {
                     settedCat.send(`<@785596843391582269> <@${message.author.id}>`).then(settedCat.send(embedTicket));
                 }
             ).catch(err => {
-                print("Er is een error bij het ticket systeem.")
+                console.log("Er is een error bij het ticket systeem.")
             });
         }
     ).catch(err => {
-        print("Er is een error bij het ticket systeem.")
+        console.log("Er is een error bij het ticket systeem.")
     });
 
 

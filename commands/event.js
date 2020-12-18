@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
         .setColor("BLUE");
 
 
-    var channel = message.guild.channels.cache.get('785099032984289290');
+    var channel = message.guild.channels.cache.get('788790266249216010');
 
     message.channel.send(tijd);
 

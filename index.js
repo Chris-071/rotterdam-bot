@@ -82,6 +82,9 @@ client.on("message", async message => {
 
     var msg = message.content.toLowerCase();
 
+    if(command){
+        console.log(`${message.author} Voerde een command uit. (${command})`);
+    }
 
 
 });
