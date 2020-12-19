@@ -33,8 +33,6 @@ module.exports.run = async (client, message, args) => {
         .setDescription(`Je bent verbannen voor Rotterdam. Reden: ${reden}`)
         .setColor("BLUE");
 
-    user.send(banEmbedDM);
-
     user.kick(reden).catch(err => {
         if (err) return console.log(err);
     });
