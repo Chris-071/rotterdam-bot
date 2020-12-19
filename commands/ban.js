@@ -38,7 +38,7 @@ module.exports.run = async (client, message, args) => {
 
     message.delete();
 
-    user.ban(reason).catch(err => {
+    user.ban(reden).catch(err => {
         if (err) return message.channel.send(`Er is een error.`);
     });
 
