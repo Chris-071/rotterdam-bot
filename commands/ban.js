@@ -10,7 +10,7 @@ module.exports.run = async(client, message, args) => {
     var user = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0])) || message.author.id;
     if(!user) return message.reply("Geef een gebruiker op.");
 
-    var reden = args.slice(1).join(" ");
+    var reden = args.slice(2).join(" ");
     if(!reden) return message.reply("Geef een reden op.");
 
 
