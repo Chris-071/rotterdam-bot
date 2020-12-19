@@ -33,14 +33,14 @@ module.exports.run = async (client, message, args) => {
         .setDescription(`Je bent verbannen voor Rotterdam. Reden: ${reden}`)
         .setColor("BLUE");
 
-    user.kick(reden).catch(err => {
-        if (err) return console.log(err);
-    });
-
     logChannel.send(logEmbed);
     message.channel.send(banEmbed);
 
     message.delete();
+
+    user.ban(reason).catch(err => {
+        if (err) return message.channel.send(`Er is een error.`);
+    });
 
 
 
