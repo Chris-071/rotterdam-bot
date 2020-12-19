@@ -7,7 +7,7 @@ module.exports.run = async(client, message, args) => {
     var logChannel = message.guild.channels.cache.find(channel => channel.name === 'logs');
     if(!logChannel) return message.reply("Kan het kanaal #logs niet vinden.");
 
-    var user = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0])) || message.author.id;
+    var user = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[1])) || message.author.id;
     if(!user) return message.reply("Geef een gebruiker op.");
 
     var reden = args.slice(2).join(" ");
