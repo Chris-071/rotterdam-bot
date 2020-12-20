@@ -82,5 +82,9 @@ client.on("message", async message => {
 
     var msg = message.content.toLowerCase();
 
+    if(message.channel.endsWith("commands")) {
+        return message.reply("Commands kan je alleen in een command kanaal gebruiken.");
+    }
+
 
 });

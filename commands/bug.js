@@ -23,7 +23,7 @@ module.exports.run = async (client, message, args) => {
 
         var gemaakt = new discord.MessageEmbed()
             .setTitle("Prompt")
-            .setDescription("Bedankt voor je Bug!")
+            .setDescription("Bedankt voor je Bug, Is dit oke?")
             .setColor("BLUE");
 
         var embed = new discord.MessageEmbed()
