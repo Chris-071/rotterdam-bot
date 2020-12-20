@@ -11,7 +11,7 @@ module.exports.run = async (client, message, args) => {
 
     if (!args[1]) return message.reply("Geef een reden op.");
 
-    var user = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0])) || message.author.id;
+    var user = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
     if (!user) return message.reply("Geef een gebruiker op.");
 
     var reden = args.slice(1).join(" ");
