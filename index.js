@@ -82,15 +82,5 @@ client.on("message", async message => {
 
     var msg = message.content.toLowerCase();
 
-    if(command && !message.channel === message.guild.channels.cache.get('788789960576466954')){
-        return message.reply(`Je kunt commands alleen in een command kanaal gebruiken.`)
-    }
-
-    if(command && !message.channel === message.guild.channels.cache.get('788792286338351145')){
-        return message.reply(`Je kunt commands alleen in een command kanaal gebruiken.`)
-    }
-    
-    
-
 
 });
