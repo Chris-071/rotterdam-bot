@@ -16,6 +16,8 @@ module.exports.run = async (client, message, args) => {
 
     var reden = args.slice(1).join(" ");
     if (!reden) return message.reply("Geef een reden op.");
+    
+    if(user.hasPermission("MANAGE_MESSAGES")) return message.reply("Je kunt geen staff bannen")
 
 
     var logEmbed = new discord.MessageEmbed()
