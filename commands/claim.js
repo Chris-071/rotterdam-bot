@@ -1,6 +1,9 @@
 const discord = require("discord.js");
 
 module.exports.run = async(client, message, args) => {
+    
+    var channel = message.guild.channels.cache.find(c => c.name === "punten-logs");
+    channel.send(`**${message.author}** Heeft een ticket geclaimd. (5 punten);
 
     if (!message.member.roles.cache.get('785596843391582269')) return message.reply("Alleen mensen met de Support Team role kunnen dit.");
 
