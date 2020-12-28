@@ -3,9 +3,7 @@ const discord = require("discord.js");
 module.exports.run = async (client, message, args) => {
 
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply('Alleen HR+ kan dit.');
-    
-    var channel = message.guild.channels.cache.find(c => c.name === "punten-logs");
-    channel.send(`**${message.author}** Heeft een training gehost. (10 punten)`);
+     
 
     var eenheid = new discord.MessageEmbed()
         .setDescription("Wat is de `Eenheid` van de training?")
@@ -89,6 +87,9 @@ module.exports.run = async (client, message, args) => {
 
                                     channel.send(trainingEmbed);
                                     msg.edit(gemaakt);
+                                    
+                                    var channel = message.guild.channels.cache.find(c => c.name === "punten-logs")
+    channel.send(`**${message.author}** Heeft een training gehost. (10 punten)`);
 
                                 } else if (emoji === "❌") {
 
