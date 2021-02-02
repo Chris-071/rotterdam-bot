@@ -9,7 +9,6 @@ const { message } = require("noblox.js");
 const activiteiten = [
     `!help`,
     `Rotterdam The Netherlands`,
-    `Bot gemaakt door: Chris071_`,
     `Game ~ SOON!`
 
 ];
