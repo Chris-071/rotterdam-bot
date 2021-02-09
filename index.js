@@ -2,15 +2,13 @@ const discord = require("discord.js");
 const botConfig = require("./botconfig.json");
 const client = new discord.Client();
 client.commands = new discord.Collection();
-client.login(process.env.token)
+client.login(process.env.token);
 const fs = require("fs");
-const { message } = require("noblox.js");
 
 const activiteiten = [
-    `!help`,
-    `Rotterdam The Netherlands`,
-    `Bot gemaakt door: Chris071_`,
-    `Game ~ SOON!`
+    `Op dit moment zijn er GEEN commands.`,
+    `V2 is in de maak.`,
+    `Bot is 'Niet' online!`
 
 ];
 
@@ -41,25 +39,6 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
-
-client.on("messageDelete", messageDeleted => {
-
-
-    if (messageDeleted.author.bot) return;
-
-    var content = messageDeleted.content;
-    if (!content) content = "Geen bericht gevonden.";
-
-    var berichtLogDelEmbed = new discord.MessageEmbed()
-        .setTitle("Bericht Verwijderd.")
-        .addField("Gebruiker: ", messageDeleted.author.tag + ` (_${messageDeleted.author.id}_)`)
-        .addField("Kanaal: ", messageDeleted.channel)
-        .addField("Bericht: ", content)
-        .setColor("BLUE");
-
-    client.channels.cache.find(c => c.name == "berichten-logs").send(berichtLogDelEmbed);
-});
-
 client.on("message", async message => {
 
     if (message.author.bot) return;
@@ -81,6 +60,5 @@ client.on("message", async message => {
     if (commands) commands.run(client, message, arguments);
 
     var msg = message.content.toLowerCase();
-
 
 });
